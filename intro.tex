@@ -1,0 +1,77 @@
+Multiphase flows abound in nature, but their stable and accurate computation remains elusive in many cases.
+As a case in point, many numerical methods used for two-phase incompressible flow are
+strongly unstable for large density contrasts and large Reynolds numbers. 
+Experience with such simulations shows that the presence of
+surface tension is an aggravating factor. The large density contrasts that are of interest are 
+ air/water or gas/liquid-metal, with $\rho_l/\rho_g$ of the order of $10^3$ or $10^4$.
+The large density contrasts are a difficulty whether one deals with any of the three major
+interface advection methods, Level-Set, Volume-of-Fluid (VOF) or Front-Tracking, or with combinations 
+such as CLSVOF.  (The term density contrast is perferable to density ratio since it encompasses ratios both much larger than one and much smaller than one.)
+
+Several methods have been used to alleviate the high-density-contrast difficulties.
+It has been observed by several authors that making the momentum-advection method conservative improves the situation. 
+%The rationale for this is that momentum conservation is a ``physical'' property of the methods. 
+For incompressible flow, momentum-conserving methods have been initially proposed by \cite{rudman98},
+and by several other authors since \cite{bussmann2002modeling,desjardins10,raessi12,le13,Vaudor:2017ip}.
+These methods have been shown to
+improve the stability of the numerical results in various situations. In particular, liquid-gas flows
+ with very contrasted densities, as for example in the the process of atomization,
+cause serious problems that are resolved by using momentum-conserving methods. 
+In that case another oft-suggested solution is to increase the number of 
+equations from the standard four equations to five, six or seven equations, 
+by introducing new field variables in each phase. 
+The addition of one more density $\rho_i$, momentum $\rho_i \U_{i}$ or energy variable
+$\rho_i e_i$  increases  the number of equations. 
+The authors of ref. \cite{Saurel99} used seven equations, 
+those of \cite{allaire02} used five equations and six equations were used in \cite{Pelanti14}. 
+The last three references also use a momentum-conserving formulation. 
+Several authors, including some of those cited above, have argued that the difficulty may come from 
+gas velocities of order $u_g$ being mixed with liquid densities of order $\rho_l$. 
+Both the $\rho_l$ and $u_g$ scales are large and the appearance of an unphysical $\rho_l u_g^2$ dynamic pressure scale could create numerical pressure fluctuations of the same order and unphysical pressure spikes, 
+as the one nicely illustrated in \cite{xiao2012large} in the front part of a
+suddenly accelerated small droplet. One way of avoiding this unphysical mixture of liquid and gas
+quantities is to extrapolate liquid and gas pressure and velocity in the ``other'' phase, 
+as in the ghost fluid method. This extrapolation strategy was used successfully in \cite{Xiao:2014vs}. 
+
+It may be argued that a way to avoid this numerical diffusion of liquid and gas quantities is to advect 
+the volume fraction and the conserved quantities that depend on it (density, momentum and energy) in a consistent manner.
+In incompressible flow in which we specialise in this paper, it means that the volume fraction and momentum
+or velocity must be advected in the same way. This is equivalent to request 
+that the discontinuity of the Heaviside function $H$, marking the phase transition,
+should be advected at the same speed as the discontinuity in momentum. 
+This can be expressed by the following consistency requirement: 
+if momentum is initially exactly proportional to volume fraction, 
+it should remain so after advection. 
+We call such a method VOF-consistent.
+
+To satisfy this requirement the idea is to solve
+the advection equation for momentum with the same numerical scheme that
+is used for the VOF color function.
+{This consistency property minimizes the unphysical transfer of momentum from one phase to another due to the differences in the numerical schemes used. The consistency is especially important
+when dealing with fluids with a large density contrast where a small numerical momentum transfer from the dense phase to the light phase results in large numerical errors in the velocity field which in turn creates numerical instabilities.}
+
+In this work, we present a modification of the classical 
+momentum-preserving scheme proposed by \cite{rudman98}
+for the case of a staggered grid and VOF method. We also focus more on 
+the consistency requirement between VOF and momentum advection, and only 
+partially conserve momentum in the scheme. This will illustrate mostly the benefit
+of using a consistent advection scheme. 
+
+The paper is organized as follow: the second section deals with the continuum mechanics formulation 
+for incompressible flow and sharp interfaces. Section 3 describes our numerical method, starting
+with an overview of already-known methods for spatial discretization, time-stepping, and VOF advection. We 
+continue with the new momentum advection-VOF-consistent method. Section 4 is devoted to tests of the 
+method, followed by a conclusion. 
+
+Among the authors, Gretar Tryggvason, Ruben Scardovelli, Yue Stanley Ling and Stephane
+Zaleski have been involved in the construction of the base of the
+ParisSimulator VOF and Front-Tracking code that was used to implement
+and test the ideas in this paper. ParisSimulator is itself based on a
+Front-Tracking code developed by Gretar Tryggvason, Sadegh Dabiri and
+Jiacai Lu.  Daniel Fuster was involved in the development of the
+Momentum Conserving method with consistent VOF advection, with help
+from Tomas Arrufat, Leon Malan and Yue Stanley Ling.  The falling
+raindrop testing and the corresponding figures were done by Tomas
+Arrufat for the CIAM method and Sagar Pal for the WY
+method. The atomisation testing was done by Marco
+Crialesi-Esposito. 

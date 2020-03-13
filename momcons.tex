@@ -1,0 +1,232 @@
+%\documentclass[preprint,review,12pt]{elsarticle}
+\documentclass[times,final]{elsarticle}
+%\documentclass[times,twocolumn,final,longtitle]{elsarticle}\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{epsfig,epstopdf}
+\usepackage{graphicx}
+\usepackage{epsfig}
+%\usepackage{amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+%\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{float}
+%\usepackage{natbib}
+%\usepackage{cite}
+%\usepackage{lineno,hyperref}
+%\modulolinenumbers[5]
+\usepackage{color}
+%\usepackage{showlabels}
+\usepackage[normalem]{ulem}
+\usepackage{epsf}
+
+
+\usepackage{listings}
+
+\input{macros.tex}
+% A
+\input{nondim.tex}
+% or B:
+%\input{macros-df.tex}
+%\undefine\neq{ {n_{\rm eq}}}
+
+\input{macros_gretar.tex}
+
+\journal{Computers and Fluids}
+
+
+
+
+%\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,urlcolor=red]{hyperref} %dvips
+%\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\newcommand {\red}[1]{{{#1}}}
+\newcommand {\blue}[1]{{{#1}}}
+\newcommand {\magenta}[1]{{{#1}}}
+\newcommand {\cyan}[1]{{{#1}}}
+%\newcommand\textcolor[1]{\red{#1}}
+
+%\newcommand {\red}[1]{{\color{red}{#1}}}
+%\newcommand {\blue}[1]{{\color{blue}{#1}}}
+%\renewcommand {\red}[1]{{}}
+%\renewcommand {\blue}[1]{{#1}}
+
+
+
+\begin{document}
+
+%\verso{Given-name Surname \textit{etal}}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{A momentum-conserving, consistent, Volume-of-Fluid method for incompressible flow on staggered grids}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[b]{}
+\author[b]{D. Fuster}
+\author[b]{T. Arrufat}
+\author[f]{M. Crialesi-Esposito}
+\author[a]{Y. Ling}
+\author[b,d]{L. Malan}
+\author[b]{S. Pal}
+\author[e]{R. Scardovelli}
+\author[label1]{G. Tryggvason}
+\author[b]{S. Zaleski}
+\address[b]{Sorbonne Universit\'e et CNRS, \\Institut Jean Le Rond d'Alembert, UMR 7190, Paris, France}
+%\address[c]{CNRS, UMR 7190, Institut Jean Le Rond d'Alembert, F-75005, Paris, France}
+\address[f]{CMT-Motores T\'ermicos, Universitat Polit\'ecnica de Val\'encia, Camino de Vera, s/n, Edificio 6D, Valencia, Spain}
+\address[d]{InCFD, Dept. of Mechanical Engineering, University of Cape Town, South Africa}
+\address[e]{ DIN - Lab. di Montecuccolino, Universit\`a di Bologna, I-40136 Bologna, Italy}
+\address[label1]{Mechanical Engineering, Johns Hopkins University, Baltimore, USA}
+\address[a]{Dept. of Mechanical Engineering, Baylor University, Waco, TX, USA} 
+
+
+\begin{abstract}
+%% Text of abstract
+   The computation of flows with large density contrasts is notoriously   difficult. To alleviate the difficulty we consider a consistent mass and   momentum-conserving discretization of the Navier-Stokes   equation. Incompressible flow with capillary forces is modelled   and the discretization is performed on a staggered grid of Marker   and Cell type. The Volume-of-Fluid method is used to track the   interface and a Height-Function method is used to compute surface   tension. The advection of the volume fraction is performed using   either the Lagrangian-Explicit / CIAM (Calcul d'Interface Affine par Morceaux)    method or the Weymouth and Yue (WY)   Eulerian-Implicit method. The WY method conserves fluid mass to machine    accuracy provided incompressiblity is satisfied which leads to    a method that is both momentum and mass-conserving.     To improve the stability of these methods   momentum fluxes are advected in a manner ``consistent'' with the   volume-fraction fluxes, that is a discontinuity of the momentum is   advected at the same speed as a discontinuity of the density. To   find the density on the staggered cells on which the velocity is   centered, an auxiliary reconstruction of the density is   performed. The method is tested for a droplet without surface   tension in uniform flow, for a droplet suddenly accelerated in a   carrying gas at rest at very large density ratio without viscosity   or surface tension, for the Kelvin-Helmholtz instability, for a   falling raindrop and for an atomizing flow in air-water conditions.
+
+\end{abstract}
+
+\begin{keyword}
+Multiphase Flows \sep Navier-Stokes Equations \sep Volume of Fluid \sep Surface Tension \sep Large Density Contrast
+%Multiphase Flows ; Navier-Stokes equations ; Volume of Fluid ; Surface Tension ; large density contrast
+ %% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+
+\end{frontmatter}
+%% \linenumbers
+
+%% main text
+\newcommand\division[1]{\subsection{#1}}
+\newcommand\subdivision[1]{\subsubsection{#1}}
+\newcommand\onlybook[1]{{}}
+\newcommand\opus{article}
+\newcommand\reduit[1]{#1}
+\newcommand\LLL{{\cal L}}
+\section{Introduction} 
+\input{intro.tex}
+
+% sections "equations" and "method".
+\input{nsemethod.tex}
+\subsection{Volume-Of-Fluid}
+\label{vof}
+\input{vof.tex}
+
+\subsection{Momentum-advection methods}
+\label{mom}
+\input{mom.tex}
+
+
+\section{Testing and Validation}
+\label{test}
+\input{testing1.tex}
+
+\section{Conclusion}
+
+We have presented and tested a simulation method for multiphase flow
+that shows increased stability at large density contrasts and large
+Reynolds numbers. The method is closely related to some variants of
+the VOF method including an implementation of the WY advection method. 
+The increased stability is evidenced in the test case
+of a single $3$-mm droplet of water falling in air, a typical
+raindrop. It is a reflection on the challenging nature of multiphase
+flow that such complex methods apparently need to be implemented to
+resolve such an everyday and simple phenomenon.
+
+The method comes with a significant saving of computer time, since for 
+similar problems with raindrops, our attempts with a non-momentum-conserving
+VOF approach led to catastrophic deformation of the drop or strong dimple 
+formation. These problems have also been observed by us using other 
+non-VOF-consistent and non-momentum-conserving methods such as the one of 
+\cite{popinet09}. In that case whenever less than 200 grid points per 
+diameter are used numerically stable air-water 
+drops accelerated at moderate Weber number cannot be found. However for
+higher resolutions they can be computed without difficulty as also found 
+by the authors of ref. \cite{Jain15}.
+Here, approximate solutions accurate within 15\% are found with only 15 
+points per diameter, and non-divergent computations are found with as little 
+as 2 points per diameter. 
+
+A particular advantage of the method is that it is conserving mass at the 
+accuracy at which discrete incompressibility is enforced and opens a
+perspective for similar momentum conservation using WY advection.
+The method nevertheless is more complex and costly than a colocated method. 
+This opens the perspective for systematic development of other methods with 
+different grid arrangements. Another perspective is the potential
+of stable methods with large density contrasts, exact mass and momentum conservation 
+and small droplets, that could be smoothly merged into models that represent 
+the small droplets as Lagrangian Point Particles \cite{Ling15}.
+
+\section{Acknowledgements} % All authors
+
+This work has been supported by the ANR MODEMI project (ANR-11-MONU-0011) program and grant 
+SU-17-R-PER-26-MULTIBRANCH from Sorbonne Universit\'e.
+%
+Philipp Yecko acknowledges support from grants NSF-1362823 and NSF-1620158.
+%
+
+This work was granted access to the HPC resources of TGCC-CURIE, TGCC-IRENE and CINES-Occigen under the allocations 
+t20152b7325,  t20162b7760, 2017tgcc0080 and A0032B07760, made by GENCI and TGCC. 
+The authors would also acknowledge the MESU 
+computing facilities of Sorbonne Universit\'e. 
+
+We would thank Dr.\ W.\ Aniszewski, Dr S. Dabiri, Dr Jiacai Lu and Dr. P. Yecko for their contribution to the development of the code \emph{PARIS-Simulator}, and we thank   Dr.\ W.\ Aniszewski, Dr. V. Le Chenadec, Mr. C. Pairetti, Dr. S. Popinet and Dr. S. Vincent for useful conversations on the topics of this paper.  
+
+Finally, the simulation data are visualized by the software VisIt developed by the Lawrence Livermore National Laboratory. 
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+\section*{References}
+\bibliographystyle{elsarticle-num} 
+\bibliography{multiphase,gretar}
+\appendix
+\section{Kelvin Helmholtz instability: numerical setup}
+\input{app_kh.tex}
+
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
+
+

@@ -1,0 +1,209 @@
+
+Reviewer #1: Although in this manuscript a further advancement in VOF
+is developed for which test results indicate that it can result in a
+significant reduction in required computational resources, I have
+encountered various problems going through this submission, and
+recommend inviting a major revision. The main issues are : clear
+presentation as to how the method, in discretized form, differs
+crucially from prior work; demonstration that the objective of
+accurate momentum "conservation" is achieved; clear presentation of
+the algorithm in terms of *discretized equations* rather than a wordy
+formulation; concerns that tests are unconvincing or that essential
+tests are missing. These and some other points are detailed below.
+
+
+
+Although the authors appear pleased with the performance of their
+method, it is difficult to this reader to extract how the method, in
+its final discretized form, actually differs from other methods. Can
+this not be explained properly somewhere? A naïve look at (55), which
+is the general form developed for the discretized momentum equation
+(well, only the advection part at this stage), suggests that this is
+merely a finite-volume method; unless I'm wrong, (55) is developed
+from (48) by invoking (51), wherein (40) is used wherein, in turn, the
+fluxes for the color function are used.
+
+> We thank the reveiwer for his question. The method is indeed
+> a standard finite volume method on a cubic grid, we make that clear 
+> by adding a few lines below equation (55). It differs from previous
+> methods by the manner in which fluxes of momentum are computed. This is also
+> made clear. 
+>
+
+Much of the method is presented in sentences rather than as an
+algorithm. Given the complicated notation (tildes, overlines, many
+indices), it would be beneficial to the paper to clearly state which
+equation is used to solve for which field at each step, notably in the
+list on p.32. That list is followed presently by a statement that
+these statements are covered in detail on p.33, but that is not true
+for most steps.
+
+> we add more details to the description of the steps 
+> and we add a diagrammatic explanation. (Not sure about *more equations*
+> rather give references to equatons which are already there such as (58) ) . 
+
+The authors' ambition is to develop a method that represents the
+advection terms in the momentum equation such that momentum is not
+created/reduced numerically. On p.34, however, it is conceded that the
+formulation is not demonstrated firmly to fully obey this principle of
+so-called "momentum conservation".
+
+> change the title ? 
+
+A fluxing scheme for momentum consistent with the geometric VOF method ....
+
+
+
+I would have expected some test
+results that confirm the accuracy of momentum conservation of this
+scheme, compared to other schemes.
+
+> add graph by Sagar
+
+A test on spurious currents is not included in section 4, such as the
+translating sphere as in Popinet (JCP 2009). Surface tension is almost
+entirely absent in the test section 4 - it is not included at all in
+the test 4.1 and seems absent in 4.2-4.4, only some weak effect in
+4.5.
+
+> surface tension is rather the topic of subsequent papers 
+> (cite parissimulator and mention the idea of future Sagar's paper)
+> however we add a spurious currents result. 
+
+It is concluded that mass is conserved at some accuracy (p.52, last
+paragraph). On the other hand, "clipping" is used (p.18) - is that
+common practice or a special requirement here?
+
+> it is common, but swept "under the rug" by previous authors. 
+
+The need for this is left open-ended on p.19, is there no update?
+
+> Unfortunately no. 
+
+Anyhow, although I appreciate the analytical efforts in sec.3, I have not seen results of numerical tests to verify how small the error in mass conservation is. I request that such data are included.
+
+> Sagar will give us some mass conservation. 
+
+Related: how important is "cloning" in the test results? On p.24 it seems to have been abandoned.
+
+> SZ will give some comments. 
+
+Much is made of the test result in sec.4.4 (falling rain drop) (fig.14
+vs fig.15). I have some concerns over this. First, in these figures
+the "pressure" field is shown. But how certain is it that this really
+is the pressure? Presumably it is the scalar field used to make the
+velocity field divergence-free. Even in single-phase flow this is not
+necessarily true (see Kim and Moin JCP 1985) - although I concede that
+the time-explicit discretization of the viscous terms would mean that
+there it really is the pressure in single-phase flow, I am not sure
+about the effect of the capillary term in the momentum equation.
+
+> ???? We see that the correction / pressure gradient
+we apply to the velocity is much smoother. 
+
+My
+second concern here are the initial conditions, which are not clearly
+stated. Do the authors use here a uniform flow in the gas and zero
+velocity in the drop? Would that not require a very large acceleration
+on the (interior) left and right poles of the drop? One might as well
+do a 1D test on this instead. Basically a shock wave would then have
+been placed at the drop surface. In that case I would not know how
+this could be realized experimentally, it would seem an artificial
+test. True enough that it would be nice if the method would be robust
+in such an extreme case, but how important that is remains unclear to
+me.
+
+> I (SZ) have clear ideas about that. It is in part explained in a published
+preprint by Florence Marcotte and SZ.
+> cite also Winkler et al. 
+
+
+Most of the other tests are not very convincing to me. In sec. 4.2
+Kelvin-Helmholtz analysis is applied to a circular interface imposed
+to parallel flow, and there is no direct comparison (only some
+interface shapes for different density ratios).
+
+> it is not possible to make a direct comparison (SZ will explain why)
+
+
+In sec.4.3, again no
+direct comparison with theory; I am disappointed to see that the
+authors use in table 1 the time at which a code crashes as indication
+of (in-) stability of the scheme used, because the flow is unstable
+physically, so a late crashing time may reflect less numerical
+diffusion (the difference between figures 11 a and b is meaningless to
+me). Some of the authors on this paper have extensive experience with
+comparing with an Orr-Sommerfeld analysis, but this is not reported on
+in this paper.
+
+> We are sorry the reveiwer finds the tests not convincing. The 10^6 $ drop
+> is a standard test (meybe 8 references)
+> The KH analysis: it deos not work, we are sorry (maybe try to redo it now ? ) 
+> preceisely because we are experts on KH - OrrSomm analysis we know it is super 
+> difficult. 
+
+The development is not the advection of the color function, but the momentum balance. For the former, two methods
+
+> (the reviewer means WY and CIAM ) 
+
+are tested. Why is CIAM used as an example of the general class of PLIC methods?
+
+> because it has many nice properties, 0 <= C <= 1, not in-bulk deviations from 0 or 1. + it is a mainstay + there are not so many , if you exclude unsplit methods. 
+
+
+Minor comments:
+p.5: The last paragraph of the introduction oddly lists the contributions made by the various authors. If this must be included at all, then perhaps at the end, near the acknowledgements.
+
+> I did that before, is it so odd ? 
+
+p.12: "(Figure 4)" not sure why this is here.
+p.13: "(20) and 21)"
+p.13: "Note that because …, even if …" rephrase
+p.14 "in each sub step m … the velocity field us ub direction m and depends only on the component x_m" - I am reminded of students who think that in a velocity field (u,v,w) u only depends on x, v only on y, etc.
+
+p.17: "C_ijk^m changes during during the three substeps" - presumably meant is that C_ijk^m is different for each m, not that at all substep C_ijk^m for all m somehow change? Or, is it?
+
+Should be clarified indeed
+
+
+p.18: "defined on the real axis" ?
+
+ok
+
+p.23: last line of sec.3.4.3: the sum over m should be taken (unlike in (45)).
+
+ok
+
+p.24: "Thus, \tilde{u}_{q,s}^m = \tilde{u}_{q,s} remains constant" : also for CIAM? Agreed for WY.
+
+check. Sagar is not sure. We should all check. 
+
+p.25: "using the above definition (26)" Should this read (45)?
+
+yes the reviewer is right. 
+
+p.25: After (55), better place milestones by reminding the reader that it remains to determine \tilde{u} and \overline{u} etc which is discussed in the next section.
+
+OK with this 
+
+p.29: first line after (70) "Then one prescribed .. the largest, of alpha and beta" I believe this is only done if that is positive.
+
+> According to wikipedia the reviewer is right, but it does not
+correspond to the code . Sagar will check.
+
+p.45 I was unable to find the "following explanation" that is attributed to ref.11 in that reference.
+
+> SZ will check the paper and the thesis of young Feng Xiao
+
+p.47 Which VOF method is used in fig.15, CIAM or WY? 
+
+CIAM
+
+p. 47 Why is a result for D/h=128 not included, given that 64 would still not seem a fine grid?
+
+Some results from the 128 by Sagar will be included. 
+
+p.48 Fig.16b shows not the vorticity magnitude (figure caption and title in the green bit) because the range includes negative values. From the small labels below the figure I gather that omega_y is shown instead.
+
+> oups the reveiwer is correct
+

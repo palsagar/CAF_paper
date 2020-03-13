@@ -1,0 +1,234 @@
+A flow configuration that combines the complexities of high density-ratios with the interaction between capillary, viscous and inertial stresses is that of a water droplet falling in air under the influence of gravitational acceleration. The problem is characterized by a combination of Reynolds, Weber and Bond numbres, the definitions of which are as follows : 
+
+\begin{align}
+We=\frac{\rho_{\rm air} U^2 d}{\sigma} \quad,\quad Re= \frac{\rho_{\rm air} U d}{\mu_{\rm air}} \quad,\quad Bo=\frac{\left(\rho_{\rm wat}-\rho_{\rm air}\right) g d^2 }{\sigma}
+\end{align}
+
+In our particular numerical setup, $We \simeq 3.2 $, $Re \simeq 1455 $ and $Bo \simeq 1.0 $, thus corresponding to that of a $3mm$ diameter raindrop (a relatively large one) falling in air at an approximate terminal velocity of  $8 m/s$ (interpolated from empirical data, refer to  \cite{gunn1949terminal}). The parameters in the problem setup is given in Table \ref{raindropprop}, and the schematic diagram given by Fig. \ref{setup}. The droplet is initially placed at the  
+\begin{table}
+\begin{center}
+\begin{tabular}{ccccccc}
+\hline\hline
+$\rho_{\rm air}$ & $\rho_{\rm water}$ & $\mu_{\rm air}$ 
+& $\mu_{\rm water}$ & $\sigma$ & $d$ & $g$\\
+$\left(kg/m^3\right)$ & $\left(kg/m^3\right)$ & $\left(Pa \, s\right)$ 
+& $\left(Pa \,s \right)$ & $\left(N/m\right)$ & $(m)$ & $(m /s^{2})$ \\
+\hline
+1.2 & $0.9982\, 10^3$ & $1.98\,10^{-5}$ & 
+$8.9 \, 10^{-4}$ & $0.0728$ & $3\, 10^{-3}$ & $9.81$\\
+\hline\hline
+\end{tabular}
+\caption{Parameter values used in the simulation of a falling water droplet in air. \label{raindropprop}}
+\end{center}
+\end{table}
+% -----
+For such a Weber number the capillary forces dominate and the droplet should 
+remain approximately spherical. Instead at moderate resolution ($D/h=15$ to 
+60 grid points per diameter were tested) and without the momentum-conserving 
+scheme described in this paper the droplet deforms catastrophically
+as shown on Fig. \ref{cata}. 
+
+% -----
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.35\textwidth]{Figures/setup.pdf}
+\end{center}
+\caption{Problem setup for falling rain drop test case. Boundary conditions 
+at the top and bottom are a uniform inflow and outflow velocity $U_0(t)$. 
+Boundary conditions on the side are free slip (no shear stress).}
+\label{setup}
+\end{figure}
+% -----
+
+% -----
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{Figures/cata.png}
+\end{center}
+\caption{Rain drop test case: catastrophic breakup with non-conserving 
+formulation, $D/h=30$.}
+\label{cata}
+\end{figure}
+% -----
+
+This effect was already found by \cite{Xiao:2014vs} in a similar case, 
+the sudden interaction of a droplet at rest with uniform gas flow. 
+For a Weber number also around 3, the droplet should remain near spherical 
+but ref. \cite{Xiao:2014vs} reports a similar catastrophic deformation and 
+gives the following explanation. To start with, we neglect gravity and viscous 
+effects at this relatively large Reynolds number. Also, we are interested 
+in steady-state flow. On the axis and near the hyperbolic stagnation point 
+at the front of the droplet one has $u_2=0$ for the transverse (radial) 
+velocity and for the axial momentum balance
+\be
+u_1 \partial_1 u_1 = - \frac 1 \rho \partial_1 p.
+\nd
+Because of the low viscosity and large density ratio, it is not possible 
+for the air flow to immediately entrain the water, so the fluid velocity is 
+significantly smaller in the water. 
+In the air the acceleration near the stagnation point is $U^2/D$ and 
+the pressure gradient is
+\be
+\partial_1 p \sim \rho_{a} U^2/D.
+\nd
+The pressure gradient in the water is much smaller, however if in a mixed cell 
+the water density multiplies the air acceleration $U^2/D$, so that
+\be
+\partial_1 p \sim \rho_{w} U^2/D,
+\nd
+then a large pressure gradient results in the mixed cell or cells. This large 
+pressure gradient results in a large pressure inside the droplet near the front 
+stagnation point, as shown in Figure \ref{FengXiao}. 
+This large pressure is balanced by surface tension only for a sufficiently large 
+curvature near the droplet front. This explains the presence of a ``dimple'' 
+often seen in low resolution simulations of the falling drop. 
+% -----
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{Figures/Sagar/16ppd_MC_vc_NON-MC.png} &
+\includegraphics[width=0.45\textwidth]
+{Figures/Sagar/non_MC_16ppd_pressure_corrected.png}\\
+(a) & (b)
+\end{tabular}
+\end{center}
+\caption{The origin of the pressure peak in the front of the droplet. 
+(a) The profile of the pressure on the axis a few timesteps after initialisation 
+with the standard, non-momentum conserving method (red) and the present method 
+(blue). (b) The pressure distribution immediately after the start of the simulation 
+using the standard, non-momentum-conserving method. The pressure peak does
+not result yet in the formation of a dimple. In all figures  $D/h = 16$.}
+\label{FengXiao}
+\end{figure}
+% -----
+
+% -----
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{Figures/Sagar/pressure_rd_MC.png} &
+\includegraphics[width=0.45\textwidth]
+{Figures/Sagar/16ppd_pressure_corrected.png}\\
+(a) & (b)
+\end{tabular}
+\end{center}
+\caption{ (a) The pressure profile on the axis a few timesteps after 
+initialisation with the present 
+method at various resolutions: $D/h = 8$ (red) , $16$ (blue) and $32$ (green). 
+(b) The pressure distribution immediately after the start of the simulation 
+using the present method and   $D/h = 16$.}
+\label{FengXiao_corrected}
+\end{figure}
+% -----
+
+Applying the method described in this paper brings a considerable improvement,
+as shown by a comparison of Figures \ref{FengXiao} and \ref{FengXiao_corrected}. 
+Simulations fall in three categories: 
+those that blow up anyway, those that have a marked peak in kinetic energy as 
+a function of time, associated with deformed interface shapes, 
+and those that keep physical values of the kinetic energy and smooth shapes.
+The most stable combinations of schemes are CIAM advection with superbee limiter
+and WY advection with QUICK limiter. 
+The CIAM advection with the superbee limiter appears also to be very diffusive. 
+
+% Slightly less stable methods result when one takes $\hat x = x_i$. 
+% In that case we observe at low resolution ($D/h=15$) the energy spike shown 
+% in Figure \ref{lowres}. The energy spike is 
+% associated with a moving bump on the droplet. Using a higher resolution 
+% of $D/h=30$ makes the energy spike disappear. 
+% Switching to the shifting of the interpolation point $\hat x$ described in 
+% Section \ref{tunedinter}, even more stable behavior is observed, down 
+% to resolutions of $D/h=8$. 
+% -----
+% \begin{figure}
+% \begin{center}
+% \begin{tabular}{cc}
+% \includegraphics[width=0.5\textwidth]{Figures/KE.png}
+% & \includegraphics[width=0.4\textwidth]{Figures/bump.png} \\
+% (a) & (b)
+% \end{tabular}
+% \end{center}
+% \caption{Effect of a slightly unstable setup. (a) The kinetic energy 
+% as a function of time exhibits several
+% spikes (b) A snapshot of the simulation at the instant of the formation 
+% of the first spike. A pointed
+% bump forms on the droplet and starts rotating rapidly.}
+% \label{lowres}
+% \end{figure}
+% -----
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.42\textwidth]{Figures/vel.png}
+& \includegraphics[width=0.48\textwidth]{Figures/vort.png} \\
+(a) & (b)
+\end{tabular}
+\end{center}
+\caption{Flow field around the 3 mm droplet with 60 grid points per diameter. 
+(a) The velocity magnitude. It is seen that even at this highest resolution 
+there are only three points in the boundary layer. (b) The vorticity magnitude. 
+The marked separation of the boundary layers is observed with 
+a more complex vortical region in the wake.}
+\label{magn}
+\end{figure}
+% -----
+\newcommand\DDD{{\cal D}}
+Visualisation of the flow around the droplets (Figure \ref{magn}) 
+contributes to explain why it is so challenging. 
+It can be seen that the boundary layers are very thin, questioning our 
+approximation that fluid velocity is continuous across the interface. 
+
+In order to validate our simulation, we study the convergence upon grid 
+refinement. Three grids are used, with $D/h=15,\,30$ and $60$. A $12$-mm 
+cubic box is used with the $3$-mm droplet at the center.  
+We study the convergence of the terminal velocity and that of the shape. 
+For the latter, we use as a descriptor of the shape the three moments of 
+inertia $I_m$ defined by
+\be
+I_m = \int_\DDD H x_m^2 {\rm d}\X \;, \quad  1 \le m \le 3,
+\nd
+where $\DDD$ is the domain used for the computation and $x_m$ is relative to
+the center of mass. The convergence of the moments of inertia and terminal 
+velocity is shown on Figure \ref{converge}. The velocity seems to converge 
+to a value around $7\, m/s$, to be compared with a value of $8.06 \,m/s$ 
+found by the authors of ref. \cite{gunn1949terminal}. 
+This is not surprising since the experimental terminal velocity would be 
+modified for a droplet constrained in a finite-size box.
+% -----
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{Figures/veloconv.png}
+& \includegraphics[width=0.45\textwidth]{Figures/shapeconv.png} \\
+(a) & (b)
+\end{tabular}
+\end{center}
+\caption{Convergence of simulations. (a) Evolution of the terminal velocity 
+with grid refinement. (b) Evolution of the three moments of inertia with 
+grid refinement.}
+\label{converge}
+\end{figure}
+% -----
+% -----
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.99\textwidth]{Figures/flatten.png}
+%\includegraphics[width=0.99\textwidth]{Figures/Sagar/fig14-001.jpeg}
+\end{center}
+\caption{Flattening of the droplet with increasing equivalent diameter 
+(see text). From left to right $D_e=3, \,4.6,\, 6.4$ and $8\, mm$.}
+\label{flatten}
+\end{figure}
+% -----
+From the values of the moments of inertia, the horizontal and vertical 
+extents of the droplet (respectively $D_r$ and $D_x$) can be found 
+and compared to the values found by the authors of \cite{Reyssat:2007ko}. 
+We find $D_r=3.1 \,mm$ and $D_x=2.6 \,mm$, while ref. \cite{Reyssat:2007ko} 
+concludes that drops are quasi-spherical for an equivalent diameter 
+$D_e \le l_c$ and deformed for $D_e > l_c$, where $l_c =(\sigma/\rho g)^{1/2}$ 
+is the capillary length, $l_c = 2.7 \,mm$ for water. 
+Indeed repeating the simulations for larger drops we find increased 
+flattening as shown on Figure \ref{flatten}. 
+%
+%\clearpage
+

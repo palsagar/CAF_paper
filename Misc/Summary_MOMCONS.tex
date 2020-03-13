@@ -1,0 +1,59 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{lscape}
+\usepackage[left=0.4cm, right=0.5cm, top=1.2cm, bottom=1cm]{geometry}
+\author{Sagar Pal}
+\title{Comparison of momentum conserving numerical schemes for high density-ratio multiphase flows}
+
+\begin{document}
+\thispagestyle{empty}
+\clearpage
+  \begin{landscape}
+      \begin{table}[p]
+      	\renewcommand\arraystretch{1.8}
+      	\centering
+      	\caption{Summary of mass-momentum consistent advection methods for incompressible flows of immiscible fluids}
+      	  \begin{tabular}[t]{ >{\bfseries\raggedright}m{0.1\linewidth} >{\raggedright}m{0.1\linewidth} >{\raggedright}m{0.1\linewidth}  >{\raggedright}m{0.1\linewidth}  >{\raggedright}m{0.1\linewidth}  >{\raggedright}m{0.1\linewidth}  >{\raggedright}m{0.1\linewidth} >{\raggedright}m{0.1\linewidth} >{\raggedright\arraybackslash}m{0.1\linewidth} }
+      	  	\toprule
+      	  	& Rudman \newline(IJNMF 1998) &  Bussmann et al. \newline (ASME 2002) & Raessi \& Pitsch \newline (CAF 2012)& Ghods \& Herrmann \newline (Physica Scripta 2013) & LeChenadec \& Pitsch \newline (JCP 2013) & Owkes \& Desjardins \newline (JCP 2017) & Vaudor et al.\newline (CAF 2017)
+      	  	& Patel \& Natarajan \newline (JCP 2017) \\
+      	  	\midrule
+      	  	Basic Configuration & 2D uniform Cartesian, \newline staggered variables & 3D hexahedral unstructured, \newline collocated variables & 2D uniform Cartesian, \newline staggered variables & 3D hexahedral unstructured, \newline collocated variables & 3D uniform Cartesian, \newline staggered variables & 3D uniform Cartesian, \newline staggered variables & 3D uniform Cartesian, \newline staggered variables & 3D polygonal unstructured, \newline staggered variables \\ 
+
+
+      	  	Interface Representation & VOF, algebraic reconstruction & VOF, PLIC reconstruction & Level-Set & Level-Set & VOF, PLIC reconstruction & VOF, PLIC reconstruction & Coupled LS-VOF & VOF, algebraic reconstruction \\
+
+
+      	  	Flux Computation & split, algebraic Flux-Corrected Transport & unsplit, geometric Eulerian & uni-dimensional LS derived fluxes & multi-dimensional LS derived fluxes & unsplit, geometric semi-Lagrangian (remap) & unsplit, geometric semi-Lagrangian & split, geometric Eulerian & unsplit, algebraic Cubic Upwind Interpolation \\
+
+
+      	  	Diffusion Operator & explicit, continuum treatment & NONE & implicit, continuum treatment & not explicitly specified & Ghost-Fluid Method, harmonic mean  & implicit, continuum treatment  & semi-implicit, sharp-interface treatment & not explicitly specified  \\
+
+
+      	  	Surface Tension & Continuum Surface-Force model & NONE & Ghost-Fluid Method & CSF model, least-squares based gradient reconstruction & Ghost-Fluid Method, well-balanced & Continuum Surface Force model, well-balanced & Ghost-Fluid Method, well-balanced & Continuum Surface Force model, well-balanced \\
+      	  	
+      	  	
+      	  	Curvature Estimation & convoluted (smoothed) VOF field & NONE & Level Set based spectrally refined interface method & Level Set & convoluted (smoothed) VOF field & hybrid mesh-decoupled height functions & Level-Set & convoluted (smoothed) VOF field \\
+
+
+      	  	Pressure-Poisson Solver & multigrid preconditioner, Gauss-Seidel & not explicitly specified & multigrid preconditioner, iterative Krylov & not explicitly specified & not explicitly specified & not explicitly specified & multigrid preconditioner, Conjugate Gradient & SAAMG-preconditioned GMRES \\
+
+
+      	  	Test Cases & rising bubble, bursting bubble & convection of high-density droplet, dam-break & convection of high-density droplet, dam-break, droplet oscillation,bursting bubble,liquid sheet breakup & convection of high-density droplet, capillary wave, dam-break & convection of high-density droplet, capillary wave, dam-break, atomization & rising bubble, electrohydrodynamic atomization & convection of high-density droplet, droplet oscillation, liquid sheet breakup, atomization & convection of high-density droplet, translating droplet, droplet splashing on liquid film, rising bubble, dam-break, RT \& KH instabilities  \\
+     
+ 
+      	  	\bottomrule
+      	  \end{tabular}    
+      \end{table}
+  \end{landscape}	
+
+
+\end{document}

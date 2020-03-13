@@ -1,0 +1,33 @@
+
+
+Reviewer #2: This paper is focused on the consistent mass and momentum-conserving discretization of the Navier-Stokes equation. The methodology is useful to alleviate the difficulty in the computation of the two-phase flows with large density difference. The manuscript is overall well written and it can be considered for publication after the following problems are improved.
+
+1. English writing should be further improved. For example, the names
+of the authors should be cited in the Introduction Section rather than
+"the authors of ref.". Moreover, the last paragraph with the
+introduction of the contribution of the authors listed in the
+manuscript in the Introduction Section should be moved to the end of
+the manuscript. Section 2 and Section 3 should be merged because both
+of them belong to the computational method.
+
+> OK , will do that
+
+2. The length of Section 3 is rather long. The contents presented in Section 3 which have been well introduced in previous studies should be shortened, and the special improvement of the model in this study should be explicitly stated. In addition, a flowchart for the realization of the computational model should be provided in order to be reproduced by readers.
+
+> don't know how to shorten section 3. SZ can makle a slight effort (with Ruben)
+> flowchart done by Sagar
+
+
+3. The definitions of some variable are missing, such as α in Eq. (16), as well as the superscript and subscript in Eq. (20).
+
+> ok
+
+4. Because the improvement of the computational model focuses on the stability and conservation of mass and momentum, the computational model should be extensively verified on the aspects of model stability and conservation. So that the advantages of the presented model could be well illustrated compared to previous models.
+
+> see referee 1, momentum and mass conservation. perhaps other stability cases. perhaps make it clearer thant all tests are about stability. 
+
+5. Graphics presentation and resolution need to be improved. For example, the axis titles are not provided in Figure 9, and the texts presented in Figures 14-16 are too small to identify.
+
+
+> Sagar will fix 14-16
+
