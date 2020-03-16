@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: momcons.aux
+The style file: elsarticle-num.bst
+Database file #1: multiphase.bib
+Database file #2: gretar.bib
+Warning--I didn't find a database entry for "rudman98"
+Warning--I didn't find a database entry for "bussmann2002modeling"
+Warning--I didn't find a database entry for "desjardins10"
+Warning--I didn't find a database entry for "raessi12"
+Warning--I didn't find a database entry for "le13"
+Warning--I didn't find a database entry for "Vaudor:2017ip"
+Warning--I didn't find a database entry for "Saurel99"
+Warning--I didn't find a database entry for "allaire02"
+Warning--I didn't find a database entry for "Pelanti14"
+Warning--I didn't find a database entry for "xiao2012large"
+Warning--I didn't find a database entry for "Xiao:2014vs"
+Warning--I didn't find a database entry for "Tryggvason11"
+Warning--I didn't find a database entry for "bna2015numerical"
+Warning--I didn't find a database entry for "bna2016vofi"
+Warning--I didn't find a database entry for "Scardovelli00"
+Warning--I didn't find a database entry for "li95"
+Warning--I didn't find a database entry for "Scardovelli02"
+Warning--I didn't find a database entry for "Weymouth:2010hy"
+Warning--I didn't find a database entry for "basilisk"
+Warning--I didn't find a database entry for "roe1985some"
+Warning--I didn't find a database entry for "brackbill92"
+Warning--I didn't find a database entry for "popinet09"
+Warning--I didn't find a database entry for "yecko02"
+Warning--I didn't find a database entry for "boeck05"
+Warning--I didn't find a database entry for "bague10"
+Warning--I didn't find a database entry for "Fuster2013energy"
+Warning--I didn't find a database entry for "hoepffner11"
+Warning--I didn't find a database entry for "Clift78"
+Warning--I didn't find a database entry for "opfer14"
+Warning--I didn't find a database entry for "matas2011experimental"
+Warning--I didn't find a database entry for "gunn1949terminal"
+Warning--I didn't find a database entry for "Reyssat:2007ko"
+Warning--I didn't find a database entry for "Ling16"
+Warning--I didn't find a database entry for "Jain15"
+Warning--I didn't find a database entry for "Ling15"
+Warning--I didn't find a database entry for "Matas_2011a"
+Warning--I didn't find a database entry for "Eggers08"
+Warning--I didn't find a database entry for "Chandrasekhar"
+You've used 0 entries,
+            2937 wiz_defined-function locations,
+            724 strings with 5667 characters,
+and the built_in function-call counts, 44 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 23
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 8
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 7
+(There were 38 warnings)

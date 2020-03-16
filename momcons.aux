@@ -1,0 +1,229 @@
+\relax 
+\Newlabel{b}{a}
+\Newlabel{f}{b}
+\Newlabel{d}{c}
+\Newlabel{e}{d}
+\Newlabel{label1}{e}
+\Newlabel{a}{f}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}\protected@file@percent }
+\citation{rudman98}
+\citation{bussmann2002modeling,desjardins10,raessi12,le13,Vaudor:2017ip}
+\citation{Saurel99}
+\citation{allaire02}
+\citation{Pelanti14}
+\citation{xiao2012large}
+\citation{Xiao:2014vs}
+\citation{rudman98}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Navier--Stokes equations with interfaces}{3}\protected@file@percent }
+\newlabel{nse}{{2}{3}}
+\newlabel{muH}{{1}{3}}
+\newlabel{interfadv}{{2}{3}}
+\newlabel{divu}{{3}{3}}
+\newlabel{nse1}{{4}{3}}
+\citation{Tryggvason11}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Representation of the staggered spatial discretisation. The pressure $p$ is assumed to be known at the center of the control volume outlined by a thick solid line. The horizontal velocity component $u_1=u$ is stored in the middle of the left and right edges of this control volume and the vertical velocity component $u_2=v$ in the middle of the top and bottom edges.}}{4}\protected@file@percent }
+\newlabel{stag-grid}{{1}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Method}{4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Spatial discretization}{4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The control volumes for the $u_1=u$ and the $u_2=v$ velocity components are displaced half a grid cell to the right (horizontal velocities) and to the top (vertical velocities). Here the indices show the location of the stored quantities. Thus, half indices indicate those variables stored at the edges of the pressure control volumes.}}{5}\protected@file@percent }
+\newlabel{Mac-u-v}{{2}{5}}
+\newlabel{cont2}{{8}{5}}
+\newlabel{incompdisc3}{{9}{5}}
+\citation{bna2015numerical}
+\citation{bna2016vofi}
+\citation{Tryggvason11}
+\citation{Tryggvason11}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Time Marching}{6}\protected@file@percent }
+\newlabel{cnp1}{{11}{6}}
+\newlabel{conspredictedvel}{{12}{6}}
+\newlabel{fotm}{{13}{6}}
+\newlabel{cont-eq1}{{14}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Volume-Of-Fluid}{6}\protected@file@percent }
+\newlabel{vof}{{3.3}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Volume initialisation}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Normal vector determination}{6}\protected@file@percent }
+\citation{Scardovelli00}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Plane constant determination}{7}\protected@file@percent }
+\newlabel{mxalpha}{{16}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}General split-direction advection}{7}\protected@file@percent }
+\newlabel{generalsplit}{{3.3.4}{7}}
+\newlabel{sumf}{{18}{7}}
+\newlabel{faceint}{{19}{7}}
+\newlabel{sumf2}{{20}{7}}
+\citation{li95}
+\citation{Scardovelli02}
+\newlabel{comp}{{21}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Lagrangian Explicit advection}{8}\protected@file@percent }
+\newlabel{map}{{22}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Advection of the AB interface segment. Face velocities at the left face, $u_{i-1/2,j} = -u_{1-}$, and the right face, $u_{i+1/2,j} = u_{1+}$, are used to create an interpolated linear velocity field, so that point $A$ is advected to point $A'$ at the velocity $u_{i-1/2,j}$, point $B$ to $B'$ at the velocity $u_{i+1/2,j}$, and a point along AB at a velocity linearly interpolated between $u_{i-1/2,j}$ and $u_{i+1/2,j}$.}}{9}\protected@file@percent }
+\newlabel{macfig}{{3}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Formation of the volumes $V_1,V_2$ and $V_3$ by Lagrangian advection in the $x$ direction. Left: initial reconstruction with the horizontal velocities on the faces of the central cell. Right: segments and volumes $V_i$ (see text) after Lagrangian advection (for simplicity it has been assumed $u_{i-3/2,j} = u_{i+3/2,j} = 0$)}}{9}\protected@file@percent }
+\newlabel{lagfig}{{4}{9}}
+\newlabel{sumflag}{{24}{9}}
+\citation{Weymouth:2010hy}
+\citation{Scardovelli02}
+\citation{Weymouth:2010hy}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Eulerian flux representation for advection in the $x$ direction. Left: same initial reconstruction of Fig. 4\hbox {} with the horizontal velocities on the faces of the central cell. Right: fluxes, or volumes $V_1$ and $V_3$, are calculated directly from the interface reconstruction in each cell}}{10}\protected@file@percent }
+\newlabel{eulflux}{{5}{10}}
+\newlabel{sumfall}{{25}{10}}
+\newlabel{cmle}{{26}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Weymouth and Yue advection}{10}\protected@file@percent }
+\newlabel{cmwy}{{27}{10}}
+\newlabel{sumfall2}{{28}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.7}Clipping}{11}\protected@file@percent }
+\newlabel{clipping}{{3.3.7}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Momentum-advection methods}{11}\protected@file@percent }
+\newlabel{mom}{{3.4}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Advection of a generic conserved quantity}{11}\protected@file@percent }
+\newlabel{phiconv}{{29}{11}}
+\newlabel{sumfp}{{30}{11}}
+\newlabel{pfaceint}{{31}{11}}
+\newlabel{uf}{{32}{11}}
+\newlabel{fluxphi}{{33}{11}}
+\newlabel{barphi}{{34}{11}}
+\citation{Saurel99}
+\citation{allaire02}
+\citation{basilisk}
+\newlabel{barphi2}{{35}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Cloning the tracers}{12}\protected@file@percent }
+\newlabel{pcv1}{{38}{12}}
+\newlabel{pcv2}{{39}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Advection of the density field}{12}\protected@file@percent }
+\newlabel{fluxrho}{{40}{13}}
+\newlabel{phiconv2}{{41}{13}}
+\newlabel{sumfpconsistent}{{42}{13}}
+\newlabel{sumfrho}{{44}{13}}
+\newlabel{central}{{45}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Momentum advection: basic expressions}{13}\protected@file@percent }
+\newlabel{barudef}{{47}{14}}
+\newlabel{sumfrou}{{48}{14}}
+\newlabel{tildeudef}{{50}{14}}
+\newlabel{frou}{{51}{14}}
+\newlabel{sumfmom2}{{52}{14}}
+\newlabel{central2}{{53}{14}}
+\newlabel{sumfmomtotfracstep}{{54}{15}}
+\newlabel{advect-ed-ing}{{55}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Momentum advection: interpolations and flux limiters}{15}\protected@file@percent }
+\newlabel{sumfmomtot}{{56}{15}}
+\newlabel{sumfmomtotbulk}{{57}{15}}
+\newlabel{advect-ed-ing-2}{{58}{15}}
+\citation{roe1985some}
+\newlabel{simpleinterp}{{64}{16}}
+\citation{Tryggvason11}
+\citation{Tryggvason11}
+\newlabel{tunedinter}{{3.4.5}{17}}
+\newlabel{mp}{{71}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces (a) The advected and advecting velocities in expression (58\hbox {}) are both located on or near face $f$ (in this case $f=1-$). The reference control volume $\Omega $ for the advected velocity component $u_q$ is also shown. The arrangement is the same whatever the component $q$ but here the example of a horizontal advection ( case $f=1-$ ) is taken. The value of the advected velocity component $\mathaccentV {bar}016u_q = \phi _0$ on the center of face $f$ (full disk) is interpolated (see text) from the values $\phi _{p}$ of $u_{q}$ on the nodes (open disks). (b) A more sophisticated interpolation predicts the value $\phi (\mathaccentV {hat}05Ex)$ where $\mathaccentV {hat}05Ex$ is at the center of the ``donating'' region $\Omega _D$ (see text).}}{18}\protected@file@percent }
+\newlabel{advect-ed-ing-fig}{{6}{18}}
+\newlabel{barphi3}{{74}{18}}
+\newlabel{barphi4}{{75}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.6}VOF-consistent Momentum advection: staggered grids.}{18}\protected@file@percent }
+\newlabel{unp11}{{76}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Computation of the staggered fractions from the half-fractions}}{20}\protected@file@percent }
+\newlabel{halffractions}{{7}{20}}
+\citation{brackbill92}
+\citation{popinet09}
+\citation{yecko02,boeck05,bague10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Description of the other time-split terms}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Testing and Validation}{21}\protected@file@percent }
+\newlabel{test}{{4}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Consistent cylinder advection}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Kelvin Helmholtz Instability}{21}\protected@file@percent }
+\citation{bussmann2002modeling,desjardins10,raessi12,le13,Vaudor:2017ip}
+\citation{Fuster2013energy}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Large-density-ratio droplet in a uniform velocity field: a droplet with $D/h=3.2$ grid points per diameter is advected in 3D in the plane $z=0$ (see text); left: density ratio $10^9$ without viscosity, right: density ratio $10^3$ with viscosity}}{22}\protected@file@percent }
+\newlabel{CylAdv}{{8}{22}}
+\newlabel{omkazi}{{78}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Sudden acceleration of a cylinder at large density contrast}{22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Deformation of a droplet moving through a light fluid. From left to right and top to bottom: $r=10,10^3,10^6,10^9$. Black shape at $t=0$, blue at $t=D/(2U)$ and red at $t=D/U$. The grid resolution is $D/h=20$.}}{23}\protected@file@percent }
+\newlabel{rich}{{9}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Deformation of a droplet moving through a light fluid at $r=10^9$. The grid resolution is $D/h=20$.}}{23}\protected@file@percent }
+\newlabel{long}{{10}{23}}
+\citation{hoepffner11}
+\citation{Clift78}
+\citation{opfer14}
+\citation{bussmann2002modeling}
+\citation{bna2015numerical,bna2016vofi}
+\citation{bussmann2002modeling}
+\citation{Fuster2013energy}
+\citation{bussmann2002modeling,desjardins10,raessi12,le13}
+\citation{matas2011experimental}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Percentage of completion of the shear layer test with various methods. All simulations are performed on a $128\times 128$ grid with a CFL of 0.03 and a density ratio of 1000.}}{25}\protected@file@percent }
+\newlabel{shearmtable}{{1}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Sheared layer}{25}\protected@file@percent }
+\citation{gunn1949terminal}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The state of the simulation of the sheared layer just before eventual breakdown of the simulation with the combination of WY VOF scheme and QUICK-UW interpolation. Left: (MC) method, right: standard method.}}{26}\protected@file@percent }
+\newlabel{shelay}{{11}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Falling Raindrop}{26}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Parameter values used in the simulation of a falling water droplet in air. }}{26}\protected@file@percent }
+\newlabel{raindropprop}{{2}{26}}
+\citation{Xiao:2014vs}
+\citation{Xiao:2014vs}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Problem setup for falling rain drop test case. Boundary conditions at the top and bottom are a uniform inflow and outflow velocity $U_0(t)$. Boundary conditions on the side are free slip (no shear stress).}}{27}\protected@file@percent }
+\newlabel{setup}{{12}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Rain drop test case: catastrophic breakup with non-conserving formulation, $D/h=30$.}}{27}\protected@file@percent }
+\newlabel{cata}{{13}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The origin of the pressure peak in the front of the droplet. (a) The profile of the pressure on the axis a few timesteps after initialisation with the standard, non-momentum conserving method (red) and the present method (blue). (b) The pressure distribution immediately after the start of the simulation using the standard, non-momentum-conserving method. The pressure peak does not result yet in the formation of a dimple. In all figures $D/h = 16$.}}{28}\protected@file@percent }
+\newlabel{FengXiao}{{14}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces  (a) The pressure profile on the axis a few timesteps after initialisation with the present method at various resolutions: $D/h = 8$ (red) , $16$ (blue) and $32$ (green). (b) The pressure distribution immediately after the start of the simulation using the present method and $D/h = 16$.}}{29}\protected@file@percent }
+\newlabel{FengXiao_corrected}{{15}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Flow field around the 3 mm droplet with 60 grid points per diameter. (a) The velocity magnitude. It is seen that even at this highest resolution there are only three points in the boundary layer. (b) The vorticity magnitude. The marked separation of the boundary layers is observed with a more complex vortical region in the wake.}}{29}\protected@file@percent }
+\newlabel{magn}{{16}{29}}
+\citation{gunn1949terminal}
+\citation{Reyssat:2007ko}
+\citation{Reyssat:2007ko}
+\citation{Ling16}
+\citation{Ling16}
+\citation{Ling16}
+\citation{Ling16}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Atomizing air and water planar jets}{30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Convergence of simulations. (a) Evolution of the terminal velocity with grid refinement. (b) Evolution of the three moments of inertia with grid refinement.}}{31}\protected@file@percent }
+\newlabel{converge}{{17}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Flattening of the droplet with increasing equivalent diameter (see text). From left to right $D_e=3, \tmspace  +\thinmuskip {.1667em}4.6,\tmspace  +\thinmuskip {.1667em} 6.4$ and $8\tmspace  +\thinmuskip {.1667em} mm$.}}{31}\protected@file@percent }
+\newlabel{flatten}{{18}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Atomizing layer with air/water properties.}}{32}\protected@file@percent }
+\newlabel{atom}{{19}{32}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Physical parameters (defined in the text) for the atomizing layer setup. The fluid properties are the same as in Table\nobreakspace  {}2\hbox {}. }}{32}\protected@file@percent }
+\newlabel{PhysicalParam}{{3}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{32}\protected@file@percent }
+\citation{popinet09}
+\citation{Jain15}
+\citation{Ling15}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Dimensionless parameters for the atomizing layer setup.}}{33}\protected@file@percent }
+\newlabel{dimensionlessParam}{{4}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Acknowledgements}{33}\protected@file@percent }
+\bibstyle{elsarticle-num}
+\bibdata{multiphase,gretar}
+\citation{Matas_2011a,Eggers08}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.20}{\ignorespaces Base velocity profile.  }}{34}\protected@file@percent }
+\newlabel{khappfig}{{A.20}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix A}Kelvin Helmholtz instability: numerical setup}{34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix A.1}Dispersion relation}{34}\protected@file@percent }
+\newlabel{heq}{{A.1}{34}}
+\newlabel{psiu}{{A.2}{34}}
+\newlabel{1}{{A.3}{34}}
+\citation{Chandrasekhar}
+\citation{Eggers08}
+\newlabel{UVWdef}{{A.4}{35}}
+\newlabel{ev}{{A.5}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix A.2}Special case}{35}\protected@file@percent }
+\newlabel{omkaz}{{A.6}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix A.3}Construction of the unstable mode}{35}\protected@file@percent }
+\newlabel{psi1}{{A.7}{35}}
+\newlabel{psi2}{{A.8}{35}}
+\newlabel{psi3}{{A.9}{35}}
+\newlabel{htw}{{A.10}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.21}{\ignorespaces Growth rate for $r=100$.  }}{36}\protected@file@percent }
+\newlabel{khappfig}{{A.21}{36}}
+\newlabel{AhC0}{{A.11}{37}}
+\newlabel{AB0sol}{{A.13}{37}}
+\newlabel{A1A0B0}{{A.14}{37}}
+\newlabel{B2A0B0}{{A.15}{37}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix A.4}Special cases: mode structure for $ka \rightarrow 0$}{37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix A.4.1}Mode structure for $a>0$ in the limit $a \rightarrow 0$.}{37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix A.5}Mode structure in the $a=0$ case}{38}\protected@file@percent }
+\newlabel{ht}{{A.16}{38}}
+\newlabel{apht}{{A.20}{38}}
+\newlabel{bpht}{{A.21}{38}}
+\newlabel{aha}{{A.29}{38}}
+\newlabel{ahb}{{A.30}{38}}
