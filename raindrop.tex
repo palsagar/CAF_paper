@@ -149,7 +149,16 @@ Regarding the first two points made above, we find that certain combinations of 
 
 \vspace*{0.2cm}
 
-Subsequently, we evaluate the performance of the present method as a function of droplet resolution. We carry out simulations corresponding to $D/h = 8, 16, 32 $ and $64$, while keeping the same value for the inflow velocity. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet mass and kinetic energy, as well as the moment of inertia of the droplet. The moment of inertia is used as a descriptor of the 'average' droplet shape , with the three moments of inertia $I_m$ defined as - 
+\begin{figure}
+\begin{center}
+\includegraphics[scale = 0.5]{Figures/Sagar/dropl_velocity_accel_ppd.png}
+\end{center}
+\vspace*{-0.5cm}
+\caption{Comparison of droplet velocity as a function of time, for different droplet resolutions, The droplet velocities correspond to that of their respective center of masses. Inset : Convergence of the droplet acceleration as a function of resolution, computed using the best linear fit over the temporal variation of their respective velocities. The error bars signify the asymptotic standard error (least-squares) corresponding to the obtained linear fits.} 
+\label{drop_vel}
+\end{figure}
+
+Subsequently, we evaluate the performance of the present method as a function of droplet resolution. We carry out simulations corresponding to $D/h = 8, 16, 32 $ and $64$, while keeping the same value for the inflow velocity. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet mass and kinetic energy, as well as the moment of inertia of the droplet. We have to keep in mind that the velocity inflow condition does not correspond to the 'exact' teminal velocity field an actual falling raindrop might encounter, hence the droplet in our numerical setup does have small acceleration due to the imbalance between the aerodynamic forces and gravity. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
 
 \be
 I_m = \int_\DDD H x_m^2 {\rm d}\X \;, \quad  1 \le m \le 3,
