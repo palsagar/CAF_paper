@@ -137,7 +137,7 @@ a more complex vortical region in the wake.}
 % -----
 \newcommand\DDD{{\cal D}}
 
-Visualisation of the flow around the droplets (Figure \ref{magn}) illustrates the challenging nature of the flow configuration, even for such a seemingly simple physical problem. As one can observe, the boundary layers are extremely thin, hence questioning our approximation that fluid velocity is continuous across the interface. We observe that applying the numerical method described in this paper brings a considerable and systematic improvement over a range of different flux limiters (WENO,ENO, Superbee, QUICK, Verstappen) and CFL numbers, as evidenced by comparing the figures \ref{FengXiao} and \ref{FengXiao_corrected}. To summarize, the simulations broadly fall in three categories: 
+Visualisation of the flow around the droplets (Figure \ref{magn}) illustrates the challenging nature of the flow configuration, even for such a seemingly simple physical problem. As one can observe, the boundary layers are extremely thin, hence questioning our approximation that fluid velocity is continuous across the interface. We observe that applying the numerical method described in this paper brings a considerable and systematic improvement over a range of different flux limiters (WENO, ENO, Superbee, QUICK, Verstappen) and CFL numbers, as evidenced by comparing the figures \ref{FengXiao} and \ref{FengXiao_corrected}. To summarize, the simulations broadly fall in three categories: 
 
 \begin{enumerate}
 	\item They blow up anyway even while applying the present method
@@ -159,6 +159,24 @@ Regarding the first two points made above, we find that certain combinations of 
 \end{figure}
 
 Subsequently, we evaluate the performance of the present method as a function of droplet resolution. We carry out simulations corresponding to $D/h = 8, 16, 32 $ and $64$, while keeping the same value for the inflow velocity. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet mass and kinetic energy, as well as the moment of inertia of the droplet. We have to keep in mind that the velocity inflow condition does not correspond to the 'exact' teminal velocity field an actual falling raindrop might encounter, hence the droplet in our numerical setup does have small acceleration due to the imbalance between the aerodynamic forces and gravity. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale = 0.5]{Figures/Sagar/drop_mass_ppd.png}
+\end{center}
+\vspace*{-0.5cm}
+\caption{Comparison of temporal evolution of the droplet mass. }
+\label{drop_vel}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale = 0.5]{Figures/Sagar/drop_ke_ppd.png}
+\end{center}
+\vspace*{-0.5cm}
+\caption{Comparison of temporal evolution of the droplet kinetic energy }
+\label{drop_vel}
+\end{figure}
 
 \be
 I_m = \int_\DDD H x_m^2 {\rm d}\X \;, \quad  1 \le m \le 3,
