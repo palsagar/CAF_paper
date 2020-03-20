@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.6)  19 MAR 2020 19:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.6)  20 MAR 2020 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -353,12 +353,6 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (./macros.tex) (./nondim.tex) (./macros_gretar.tex) (./momcons.aux
-
-LaTeX Warning: Label `drop_vel' multiply defined.
-
-
-LaTeX Warning: Label `drop_vel' multiply defined.
-
 
 LaTeX Warning: Label `khappfig' multiply defined.
 
@@ -852,31 +846,29 @@ Package pdftex.def Info: Figures/Sagar/dropl_velocity_accel_ppd.png  used on in
 put line 154.
 (pdftex.def)             Requested size: 334.97063pt x 247.52414pt.
  [30 <./Figures/Sagar/dropl_velocity_accel_ppd.png>]
-<Figures/Sagar/drop_mass_ppd.png, id=236, 552.1428pt x 416.2752pt>
-File: Figures/Sagar/drop_mass_ppd.png Graphic file (type png)
-<use Figures/Sagar/drop_mass_ppd.png>
-Package pdftex.def Info: Figures/Sagar/drop_mass_ppd.png  used on input line 16
-5.
-(pdftex.def)             Requested size: 276.07072pt x 208.13708pt.
-<Figures/Sagar/drop_ke_ppd.png, id=237, 433.62pt x 433.62pt>
-File: Figures/Sagar/drop_ke_ppd.png Graphic file (type png)
-<use Figures/Sagar/drop_ke_ppd.png>
-Package pdftex.def Info: Figures/Sagar/drop_ke_ppd.png  used on input line 174.
+<Figures/Sagar/multiplot_raindrop.png, id=236, 578.16pt x 433.62pt>
+File: Figures/Sagar/multiplot_raindrop.png Graphic file (type png)
+<use Figures/Sagar/multiplot_raindrop.png>
+Package pdftex.def Info: Figures/Sagar/multiplot_raindrop.png  used on input li
+ne 171.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
-(pdftex.def)             Requested size: 216.80946pt x 216.80946pt.
-<Figures/flatten.png, id=238, 4336.2pt x 1084.05pt>
+Overfull \hbox (1.89867pt too wide) in paragraph at lines 171--172
+ [] 
+ []
+
+<Figures/flatten.png, id=237, 4336.2pt x 1084.05pt>
 File: Figures/flatten.png Graphic file (type png)
 <use Figures/flatten.png>
-Package pdftex.def Info: Figures/flatten.png  used on input line 192.
+Package pdftex.def Info: Figures/flatten.png  used on input line 183.
 (pdftex.def)             Requested size: 341.5519pt x 85.38593pt.
 
+Package natbib Warning: Citation `Reyssat:2007ko' on page 31 undefined on input
+ line 193.
+
 
 Package natbib Warning: Citation `Reyssat:2007ko' on page 31 undefined on input
- line 202.
-
-
-Package natbib Warning: Citation `Reyssat:2007ko' on page 31 undefined on input
- line 203.
+ line 194.
 
 )
 
@@ -895,15 +887,15 @@ Package natbib Warning: Citation `Ling16' on page 31 undefined on input line 26
 Package natbib Warning: Citation `Ling16' on page 31 undefined on input line 27
 1.
 
-[31 <./Figures/Sagar/drop_mass_ppd.png>] [32 <./Figures/Sagar/drop_ke_ppd.png> 
-<./Figures/flatten.png>]
-<Figures/Marco/vof-vel-atom.png, id=249, 3023.295pt x 1569.865pt>
+[31 <./Figures/Sagar/multiplot_raindrop.png>]
+<Figures/Marco/vof-vel-atom.png, id=243, 3023.295pt x 1569.865pt>
 File: Figures/Marco/vof-vel-atom.png Graphic file (type png)
 <use Figures/Marco/vof-vel-atom.png>
 Package pdftex.def Info: Figures/Marco/vof-vel-atom.png  used on input line 281
 .
 (pdftex.def)             Requested size: 341.5519pt x 177.3328pt.
-) [33 <./Figures/Marco/vof-vel-atom.png (PNG copy)>]
+) [32 <./Figures/flatten.png>]
+[33 <./Figures/Marco/vof-vel-atom.png (PNG copy)>]
 
 Package natbib Warning: Citation `popinet09' on page 34 undefined on input line
  170.
@@ -936,7 +928,7 @@ Package natbib Warning: Citation `Eggers08' on page 34 undefined on input line
 7.
 
 [34]
-<Figures/2-1.pdf, id=256, 722.7pt x 542.025pt>
+<Figures/2-1.pdf, id=254, 722.7pt x 542.025pt>
 File: Figures/2-1.pdf Graphic file (type pdf)
 <use Figures/2-1.pdf>
 Package pdftex.def Info: Figures/2-1.pdf  used on input line 10.
@@ -953,30 +945,30 @@ Package natbib Warning: Citation `Eggers08' on page 36 undefined on input line
 
 LaTeX Warning: Reference `gg1' on page 36 undefined on input line 64.
 
-<Figures/rrates_100.pdf, id=355, 361.35pt x 361.35pt>
+<Figures/rrates_100.pdf, id=353, 361.35pt x 361.35pt>
 File: Figures/rrates_100.pdf Graphic file (type pdf)
 <use Figures/rrates_100.pdf>
 Package pdftex.def Info: Figures/rrates_100.pdf  used on input line 70.
 (pdftex.def)             Requested size: 276.00105pt x 276.00177pt.
-[36] [37 <./Figures/rrates_100.pdf>]
+[36 <./Figures/rrates_100.pdf>]
 Missing character: There is no Â in font txr!
 Missing character: There is no   in font txr!
- [38]
+ [37]
 
-LaTeX Warning: Reference `w1' on page 39 undefined on input line 170.
-
-Missing character: There is no Â in font txr!
-Missing character: There is no   in font txr!
-
-LaTeX Warning: Reference `w3' on page 39 undefined on input line 170.
-
-
-LaTeX Warning: Reference `w1' on page 39 undefined on input line 178.
+LaTeX Warning: Reference `w1' on page 38 undefined on input line 170.
 
 Missing character: There is no Â in font txr!
 Missing character: There is no   in font txr!
 
-LaTeX Warning: Reference `w3' on page 39 undefined on input line 178.
+LaTeX Warning: Reference `w3' on page 38 undefined on input line 170.
+
+
+LaTeX Warning: Reference `w1' on page 38 undefined on input line 178.
+
+Missing character: There is no Â in font txr!
+Missing character: There is no   in font txr!
+
+LaTeX Warning: Reference `w3' on page 38 undefined on input line 178.
 
 Missing character: There is no Â in font txr!
 Missing character: There is no   in font txr!
@@ -984,6 +976,7 @@ Missing character: There is no Â in font txr!
 Missing character: There is no   in font txr!
 Missing character: There is no Â in font txr!
 Missing character: There is no   in font txr!
+[38]
 Missing character: There is no Â in font txr!
 Missing character: There is no   in font txr!
 )
@@ -999,10 +992,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5316 strings out of 494923
- 70425 string characters out of 6180743
- 126342 words of memory out of 5000000
- 8440 multiletter control sequences out of 15000+600000
+ 5312 strings out of 494923
+ 70307 string characters out of 6180743
+ 126352 words of memory out of 5000000
+ 8437 multiletter control sequences out of 15000+600000
  42398 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,12n,32p,1577b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1016,10 +1009,10 @@ re/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on momcons.pdf (39 pages, 3476336 bytes).
+Output written on momcons.pdf (39 pages, 3487950 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
+ 441 PDF objects out of 1000 (max. 8388607)
  278 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

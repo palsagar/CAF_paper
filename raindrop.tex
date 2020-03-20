@@ -160,29 +160,20 @@ Regarding the first two points made above, we find that certain combinations of 
 
 Subsequently, we evaluate the performance of the present method as a function of droplet resolution. We carry out simulations corresponding to $D/h = 8, 16, 32 $ and $64$, while keeping the same value for the inflow velocity. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet mass and kinetic energy, as well as the moment of inertia of the droplet. We have to keep in mind that the velocity inflow condition does not correspond to the 'exact' teminal velocity field an actual falling raindrop might encounter, hence the droplet in our numerical setup does have small acceleration due to the imbalance between the aerodynamic forces and gravity. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale = 0.5]{Figures/Sagar/drop_mass_ppd.png}
-\end{center}
-\vspace*{-0.5cm}
-\caption{Comparison of temporal evolution of the droplet mass. }
-\label{drop_vel}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale = 0.5]{Figures/Sagar/drop_ke_ppd.png}
-\end{center}
-\vspace*{-0.5cm}
-\caption{Comparison of temporal evolution of the droplet kinetic energy }
-\label{drop_vel}
-\end{figure}
-
 \be
 I_m = \int_\DDD H x_m^2 {\rm d}\X \;, \quad  1 \le m \le 3,
 \nd
 
 where $\DDD$ is the computational domain and $x_m$ is the distance of the interface relative to the center of mass of the droplet.   
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale = 0.6]{Figures/Sagar/multiplot_raindrop.png}
+\end{center}
+\vspace*{-0.5cm}
+	\caption{Temporal evolution of quantities of interest to evaluate the performance of our present method for different spatial resolutions. (A) Kinetic energy of the droplet. (B) Percentage change in the droplet mass from initialized mass. (C) Moment of inertia of the droplet along flow (X) direction. (D) Moment of inertia of the droplet along direction perpendicular to flow (Y,Z), evolution of $I_{yy}$ is identical to $I_{zz}$, thus the latter is not shown.}
+\label{multi}
+\end{figure}
 
 
 This is not surprising since the experimental terminal velocity would be 
