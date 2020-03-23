@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.6)  22 MAR 2020 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.6)  23 MAR 2020 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,7 +1013,7 @@ re/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on momcons.pdf (40 pages, 3490083 bytes).
+Output written on momcons.pdf (40 pages, 3490104 bytes).
 PDF statistics:
  444 PDF objects out of 1000 (max. 8388607)
  280 compressed objects within 3 object streams

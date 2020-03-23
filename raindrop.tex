@@ -8,7 +8,7 @@ We=\frac{\rho_{\rm air} U^2 d}{\sigma} \quad,\quad Re= \frac{\rho_{\rm air} U d}
 
 \vspace*{0.2cm}
 
-In our particular numerical setup, $We \simeq 3.2 $, $Re \simeq 1455 $ and $Bo \simeq 1.0 $, thus corresponding to that of a $3mm$ diameter raindrop (a relatively large one) falling in air at an approximate terminal velocity of  $8$ m/s (interpolated from empirical data, refer to  \cite{gunn1949terminal}). The parameters in the problem setup is given in Table \ref{raindropprop}, and the schematic diagram given by Fig. \ref{setup}. The droplet is initially placed at the center of a cubic domain (3D), whose side is 4 times the diameter of the drop. 
+In our particular numerical setup, $We \simeq 3.2 $, $Re \simeq 1455 $ and $Bo \simeq 1.2 $, thus corresponding to that of a $3mm$ diameter raindrop (a relatively large one) falling in air at an approximate terminal velocity of  $8$ m/s (interpolated from empirical data, refer to  \cite{gunn1949terminal}). The parameters in the problem setup is given in Table \ref{raindropprop}, and the schematic diagram given by Fig. \ref{setup}. The droplet is initially placed at the center of a cubic domain (3D), whose side is 4 times the diameter of the drop. 
 
 \vspace*{0.2cm}
 
@@ -60,7 +60,7 @@ formulation, $D/h=30$.}
 \end{figure}
 % -----
 
-Numerical simulations of this test case at moderate resolution ($D/h=16$ to 64 grid points per diameter were tested) without the consistent momentum-conserving scheme described in this paper, results in the catastrophic deformations of the droplet as shown in Fig. \ref{cata}, which we like to describe as 'fictitious' or 'artificial' atomization as a result of rapidly growing numerical instabilities. This effect was previously uncovered by \cite{Xiao:2014vs} in a similar case involcing the sudden interaction of a droplet at rest with a uniform gas flow. The Weber number in that case was also approximately 3, therefore one would expect a nearly spherical droplet shape, but the authors of ref. \cite{Xiao:2014vs} have reported a similar catastrophic deformation, forwarding the following explanation. To start with, we neglect gravity and viscous effects at this relatively large Reynolds number. Also, we are interested in steady-state flow. On the axis and near the hyperbolic stagnation point at the front of the droplet one has $u_2=0$ for the transverse (radial) velocity and for the axial momentum balance
+Numerical simulations of this test case at moderate resolution ($D/h=16$ to 64 grid points per diameter were tested) without the consistent momentum-conserving scheme described in this paper, results in the catastrophic deformations of the droplet as shown in Fig. \ref{cata}, which we like to describe as 'fictitious' or 'artificial' atomization as a result of rapidly growing numerical instabilities. This effect was previously uncovered by \cite{Xiao:2014vs} in a similar case involving the sudden interaction of a droplet at rest with a uniform gas flow. The Weber number in that case was also approximately 3, therefore one would expect a nearly spherical droplet shape, but the authors of ref. \cite{Xiao:2014vs} have reported a similar catastrophic deformation, forwarding the following explanation. To start with, we neglect gravity and viscous effects at this relatively large Reynolds number. Also, we are interested in steady-state flow. On the axis and near the hyperbolic stagnation point at the front of the droplet one has $u_2=0$ for the transverse (radial) velocity and for the axial momentum balance
 
 \be
 u_1 \partial_1 u_1 = - \frac 1 \rho \partial_1 p.
@@ -142,7 +142,7 @@ Visualization of the flow around the droplets (Figure \ref{magn}) illustrates th
 \begin{enumerate}
 	\item They blow up anyway even while applying the present method
 	\item They keep physical values of the kinetic energy and smooth interfacial shapes.
-	\item They have a marked peak in kinetic energy as a function of time, associated with massively deformed interface shapes, 
+	\item They have marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes, 
 \end{enumerate}
 
 Regarding the first two points made above, we find that certain combinations of the advection scheme (CIAM/WY) and the flux limiter (ENO/WENO/Superbee/Verstappen/QUICK) display more numerical stability that the others, in particular, the most stable combinations of schemes are CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter also appears to be quite diffusive. The third point highlights the systematic behavior of the simulations that are carried out without applying the present momentum-conserving method. 
