@@ -8,7 +8,7 @@ We=\frac{\rho_{\rm air} U^2 d}{\sigma} \quad,\quad Re= \frac{\rho_{\rm air} U d}
 
 \vspace*{0.2cm}
 
-In our particular numerical setup, $We \simeq 3.2 $, $Re \simeq 1455 $ and $Bo \simeq 1.2 $, thus corresponding to that of a $3mm$ diameter raindrop (a relatively large one) falling in air at an approximate terminal velocity of  $8$ m/s (interpolated from empirical data, refer to  \cite{gunn1949terminal}). The parameters in the problem setup is given in Table \ref{raindropprop}, and the schematic diagram given by Fig. \ref{setup}. The droplet is initially placed at the center of a cubic domain (3D), whose side is 4 times the diameter of the drop. 
+In our particular numerical setup, $We \simeq 3.2 $, $Re \simeq 1455 $ and $Bo \simeq 1.2 $, thus corresponding to that of a $3mm$ diameter raindrop (a relatively large one) falling in air at an approximate terminal velocity of  $8$ m/s (interpolated from empirical data, refer to  \cite{gunn1949terminal}). The parameters in the problem setup are given in Table \ref{raindropprop}, and the schematic diagram given by Fig. \ref{setup}. The droplet is initially placed at the center of a cubic domain (3D), whose side is 4 times the diameter of the drop. 
 
 \vspace*{0.2cm}
 
@@ -33,7 +33,7 @@ $8.9 \times 10^{-4}$ & $0.0728$ & $3 \times 10^{-3}$ & $9.81$\\
 
 \vspace*{0.2cm}
 
-In order to properly reproduce and analyse the dynamics of a relatively large drop (high Reynolds flow) such as in our case, the numerical method has to accurately resolve the thin, complicated boundary layers, the interaction of such layers with the capillary deformations and finally the non-linear feedback of the complex 3D vortical structures in the droplet wake to the surrounding pressure field. Therefore, we explicitly state that the aim of this particular test case is not to develop a high fidelity model of a raindrop, but rather carry out a stringent evaluation of the robustness of our numerical method compared to methods which are not momentum consistent. For such a low Weber number the capillary forces dominate and the droplet should remain approximately spherical, and should definitely not undergoe any subsequent atomization. 
+In order to properly reproduce and analyse the dynamics of a relatively large drop (high Reynolds flow) such as in our case, the numerical method has to accurately resolve the thin boundary layers, the interaction of such layers with the capillary forces and finally the non-linear feedback of the complex 3D vortical structures present in the wake behind the droplet. Therefore, our objective behind the demonstration of this particular test case is not to develop a high fidelity model of a raindrop, but rather carry out a stringent evaluation of the robustness of our numerical method compared to methods which are not momentum consistent. For such a low Weber number the capillary forces dominate and the droplet should remain intact, and definitely not undergoe any subsequent atomization. 
 
 
 % -----
@@ -60,13 +60,13 @@ formulation, $D/h=30$.}
 \end{figure}
 % -----
 
-Numerical simulations of this test case at moderate resolution ($D/h=16$ to 64 grid points per diameter were tested) without the consistent momentum-conserving scheme described in this paper, results in the catastrophic deformations of the droplet as shown in Fig. \ref{cata}, which we like to describe as 'fictitious' or 'artificial' atomization as a result of rapidly growing numerical instabilities. This effect was previously uncovered by \cite{Xiao:2014vs} in a similar case involving the sudden interaction of a droplet at rest with a uniform gas flow. The Weber number in that case was also approximately 3, therefore one would expect a nearly spherical droplet shape, but the authors of ref. \cite{Xiao:2014vs} have reported a similar catastrophic deformation, forwarding the following explanation. To start with, we neglect gravity and viscous effects at this relatively large Reynolds number. Also, we are interested in steady-state flow. On the axis and near the hyperbolic stagnation point at the front of the droplet one has $u_2=0$ for the transverse (radial) velocity and for the axial momentum balance
+Numerical simulations of this test case at moderate resolution ($D/h=16$ to 64 grid points per diameter were tested) without the consistent momentum-conserving scheme described in this paper, results in the catastrophic deformations of the droplet as shown in Fig. \ref{cata}, which we describe as 'fictitious' or 'artificial' atomization as a result of rapidly growing numerical instabilities. This effect was previously uncovered by \cite{Xiao:2014vs} in a similar case involving the sudden interaction of a droplet at rest with a uniform gas flow. The Weber number in that case was also approximately 3, therefore one would expect a nearly spherical droplet shape, but the authors of ref. \cite{Xiao:2014vs} have reported a similar catastrophic deformation. We propose the following explanation in order to account for such numerical artifacts. To start with, we neglect gravity and viscous effects at this relatively large Reynolds number. Also, we are interested in steady-state flow. On the axis and near the hyperbolic stagnation point at the front of the droplet one has $u_2=0$ for the transverse (radial) velocity and for the axial momentum balance
 
 \be
 u_1 \partial_1 u_1 = - \frac 1 \rho \partial_1 p.
 \nd
 
-Because of the low viscosity and large density ratio, it is not possible for the air flow to immediately entrain the water, so the fluid velocity is significantly smaller in the water. In the air the acceleration near the stagnation point is of the order $U^2/D$, whereas the pressure gradient is
+Due to the large viscosity and density ratios, it is not possible for the air flow to immediately entrain the water, so the fluid velocity is significantly smaller inside the droplet. In the air the acceleration near the stagnation point is of the order $U^2/D$, whereas the pressure gradient is
 
 \be
 \partial_1 p \sim \rho_{a} U^2/D.
@@ -137,15 +137,11 @@ a more complex vortical region in the wake.}
 % -----
 \newcommand\DDD{{\cal D}}
 
-Visualization of the flow around the droplets (Figure \ref{magn}) illustrates the challenging nature of the flow configuration, even for such a seemingly simple physical problem. As one can observe, the boundary layers are extremely thin, hence questioning our approximation that fluid velocity is continuous across the interface. We observe that applying the numerical method described in this paper brings a considerable and systematic improvement over a range of different flux limiters (WENO, ENO, Superbee, QUICK, Verstappen) and CFL numbers, as evidenced by comparing the figures \ref{FengXiao} and \ref{FengXiao_corrected}. To summarize, the simulations broadly fall in three categories: 
+Visualization of the flow around the droplets (Figure \ref{magn}) illustrates the challenging nature of the flow configuration, even for such a seemingly simple physical problem. As one can observe, the boundary layers are extremely thin. Therefore, even though the velocity field is continuous across the interface (in the discrete sense) in the absence of mass transfer, there is the appearance of strong velocity variations at the scale of the grid size for such coarse levels of grid refinement. We observe that applying the numerical method described in this paper brings a considerable and systematic improvement over a range of different flux limiters (WENO, ENO, Superbee, QUICK, Verstappen) and CFL numbers, as evidenced by comparing the figures \ref{FengXiao} and \ref{FengXiao_corrected}. 
 
-\begin{enumerate}
-	\item They blow up anyway even while applying the present method
-	\item They keep physical values of the kinetic energy and smooth interfacial shapes.
-	\item They have marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes, 
-\end{enumerate}
+\vspace*{0.2cm}
 
-Regarding the first two points made above, we find that certain combinations of the advection scheme (CIAM/WY) and the flux limiter (ENO/WENO/Superbee/Verstappen/QUICK) display more numerical stability that the others, in particular, the most stable combinations of schemes are CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter also appears to be quite diffusive. The third point highlights the systematic behavior of the simulations that are carried out without applying the present momentum-conserving method. 
+To summarize, the simulations broadly fall into three categories. The first two categories concern those that use the present momentum conserving method, and as a result maintain physical values of the kinetic energy and smooth interfacial shapes. Certain simulations amongst the ones carried out with the present method dispaly some numerical instablities as a function of the choice of advection scheme (CIAM/WY) and flux limiter (QUICK/WENO/ENO/Superbee/Verstappen) combination. Finally, there are simulations that rapidly blow up, displaying marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes. Therefore, our studies suggest that certain combinations of the advection scheme and the flux limiter are more numerically robust than others, in particular, the most stable combinations are that of CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter appear to be quite diffusive. 
 
 \vspace*{0.2cm}
 
@@ -158,7 +154,7 @@ Regarding the first two points made above, we find that certain combinations of 
 \label{multi}
 \end{figure}
 
-We illustrate the performance of the present method through the results of our simulations in Figure \ref{multi}. We have carried out simulations corresponding to $D/h = 8, 16, 32 $ and $64$, while keeping the same value for the inflow velocity boundary condition. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet kinetic energy (Fig. \ref{multi}. A) and droplet mass (Fig. \ref{multi}. B), as well as moment of inertia of the droplet along directions aligned to the inflow velocity (Fig. \ref{multi}. C) and orthogonal (Fig. \ref{multi}. D) to it. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
+We illustrate the performance of the present method through the results of our simulations in Figure \ref{multi}. We have carried out simulations corresponding to $D/h = 8, 16, 32 $ and $64$ using the WY advection scheme in combination with the QUICK flux limiter, while keeping the same value for the inflow velocity boundary condition. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet kinetic energy (Fig. \ref{multi}. A) and droplet mass (Fig. \ref{multi}. B), as well as moment of inertia of the droplet along directions aligned to the inflow velocity (Fig. \ref{multi}. C) and orthogonal (Fig. \ref{multi}. D) to it. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
 
 \be
 I_m = \int_\DDD H x_m^2 {\rm d}\X \;, \quad  1 \le m \le 3,
@@ -175,30 +171,37 @@ where $\DDD$ is the computational domain and $x_m$ is the distance of the interf
 \label{drop_vel}
 \end{figure}
 
-The kinetic energy of the droplet evolves in a relatively smooth manner, without the presence of sudden spikes and falls which are emblematic of the non-conservative version of our method. Such abrupt changes in kinetic energy of the droplet have been found to be associated with instants when the droplet undergoes 'artificial' atomization or breakup, henceforth resulting in the catastrophic loss of stability for the numerical method. We observe a systematic drop in the amount of the droplet kinetic energy as we increase resolution, with the most probable explanation being that of the suppression of spurious interfacial oscillations which are rampant at low resolutions. There is also a component of the kinetic energy of the droplet associated with the internal coherent vortical structures generated due to the interaction of aerodynamic shear at the interface, evidenced by the non-zero value of the kinetic energy even for the most highly resolved droplets. In terms of mass conservation, our method performs exceedingly well, with the fractional loss of mass bounded within $0.0001 \%$ for all droplet resolutions tested. Finally, the moment of inertia of the droplet appears to evolve in a smooth manner for all droplet resolutions, with higher resolutions exhibiting lower amounts of inertia as a result of the more compact shapes obtained once the spurious interfacial deformation modes are subdued.          
+The kinetic energy of the droplet evolves in a relatively smooth manner, without the presence of sudden spikes and falls which are emblematic of the non-conservative version of our method. Such abrupt changes in kinetic energy of the droplet have been found to be associated with instants when the droplet undergoes 'artificial' atomization or breakup, henceforth resulting in the catastrophic loss of stability for the numerical method. We observe a systematic drop in the amount of the droplet kinetic energy as we increase resolution, with the most probable explanation being that of the suppression of spurious interfacial oscillations which are rampant at low resolutions. There is also a component of the kinetic energy of the droplet associated with the internal coherent vortical structures generated due to the interaction of aerodynamic shear at the interface, evidenced by the non-zero value of the kinetic energy even for the most highly resolved droplets. In terms of mass conservation, our method performs well, with the fractional loss of mass bounded within $0.0001 \%$ for all droplet resolutions tested. Finally, the moment of inertia of the droplet appears to evolve in a smooth manner for all droplet resolutions, with higher resolutions exhibiting lower amounts of inertia as a result of the more compact shapes obtained once the spurious interfacial deformation modes are subdued.          
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.99\textwidth]{Figures/flatten.png}
-%\includegraphics[width=0.99\textwidth]{Figures/Sagar/fig14-001.jpeg}
-\end{center}
-\caption{Flattening of the droplet with increasing equivalent diameter 
-(see text). From left to right $D_e=3, \,4.6,\, 6.4$ and $8\, mm$.}
-\label{flatten}
-\end{figure}
 % -----
 
-From the values of the moments of inertia, the horizontal and vertical 
-extents of the droplet (respectively $D_r$ and $D_x$) can be found 
-and compared to the values found by the authors of \cite{Reyssat:2007ko}. 
-We find $D_r=3.1 \,mm$ and $D_x=2.6 \,mm$, while ref. \cite{Reyssat:2007ko} 
-concludes that drops are quasi-spherical for an equivalent diameter 
-$D_e \le l_c$ and deformed for $D_e > l_c$, where $l_c =(\sigma/\rho g)^{1/2}$ 
-is the capillary length, $l_c = 2.7 \,mm$ for water. 
-Indeed repeating the simulations for larger drops we find increased 
-flattening as shown on Figure \ref{flatten}. 
+% Section written by Stephane. Not sure whether to keep this in the current context. 
 
-We have to keep in mind that the velocity inflow condition does not correspond to the 'exact' teminal velocity field an actual falling raindrop might experience, hence the droplet in our numerical setup does have some finite acceleration due to the imbalance between the aerodynamic forces and gravity. In Figure \ref{drop_vel}, we demonstrate the velocity of the center of mass of the droplet as a function of time, and its behavior as we increase the droplet resolution. As one can observe, due to the imbalance of forces acting on the droplet, it undergoes a net acceleration as evidenced by the approximately linear increase (absolute value) in the velocity as a function of time. The temporal variation in the droplet velocity is fitted to a linear polynomial in order to evaluate the droplet acceleration by means of a standard least-squares approach, for each droplet resolution. We illustrate (inset Figure \ref{drop_vel}) that we achieve more accurate fits as a consequence of higher droplet resolutions, as evidenced by decrease in the standard error on the fits ranging from $\pm 11.1 \%$ for $D/h = 8$ to a value of $\pm 0.12 \%$ for the highest resolution of $D/h = 64$. This provides us with an indirect indication that our numerical method can be used to generate high fidelity models of the underlying dynamics, provided sufficient resolution.           
+%------------------------------------------------------------------------------------------
+%From the values of the moments of inertia, the horizontal and vertical 
+%extents of the droplet (respectively $D_r$ and $D_x$) can be found 
+%and compared to the values found by the authors of \cite{Reyssat:2007ko}. 
+%We find $D_r=3.1 \,mm$ and $D_x=2.6 \,mm$, while ref. \cite{Reyssat:2007ko} 
+%concludes that drops are quasi-spherical for an equivalent diameter 
+%$D_e \le l_c$ and deformed for $D_e > l_c$, where $l_c =(\sigma/\rho g)^{1/2}$ 
+%is the capillary length, $l_c = 2.7 \,mm$ for water. 
+%Indeed repeating the simulations for larger drops we find increased 
+%flattening as shown on Figure \ref{flatten}. 
+
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=0.99\textwidth]{Figures/flatten.png}
+%%\includegraphics[width=0.99\textwidth]{Figures/Sagar/fig14-001.jpeg}
+%\end{center}
+%\caption{Flattening of the droplet with increasing equivalent diameter 
+%(see text). From left to right $D_e=3, \,4.6,\, 6.4$ and $8\, mm$.}
+%\label{flatten}
+%\end{figure}
+%------------------------------------------------------------------------------------------
+\vspace*{0.2cm}
+
+
+We have to keep in mind that the velocity inflow condition does not correspond to the 'exact' teminal velocity field an actual falling raindrop might experience, hence the droplet in our numerical setup does have some finite acceleration due to the imbalance between the aerodynamic forces and gravity. In Figure \ref{drop_vel}, we demonstrate the velocity of the center of mass of the droplet (in the frame of reference of the box enclosing the droplet) as a function of time, and its behavior as we increase the droplet resolution. As one can observe, due to the imbalance of forces acting on the droplet, it undergoes a net acceleration as evidenced by the approximately linear increase (absolute value) in the velocity as a function of time. The temporal variation in the droplet velocity is fitted to a linear polynomial in order to evaluate the droplet acceleration by means of a standard least-squares approach, for each droplet resolution. We illustrate (inset Figure \ref{drop_vel}) that we achieve more accurate fits as a consequence of higher droplet resolutions, as evidenced by decrease in the standard error on the fits ranging from $\pm 11.1 \%$ for $D/h = 8$ to a value of $\pm 0.12 \%$ for the highest resolution of $D/h = 64$. The results obtained in this section indicate that especially when it comes to low resolutions, our numerical method can be used to get relatively good estimates of the underlying flow features of the droplet without suffering any un-physical dynamic responses.           
 
 
 %
