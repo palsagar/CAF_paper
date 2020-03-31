@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.6)  31 MAR 2020 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.31)  31 MAR 2020 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **momcons.tex
 (./momcons.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./elsarticle.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
@@ -999,13 +999,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5311 strings out of 494923
- 70330 string characters out of 6180743
- 126352 words of memory out of 5000000
- 8436 multiletter control sequences out of 15000+600000
+ 5311 strings out of 492982
+ 70330 string characters out of 6134896
+ 131283 words of memory out of 5000000
+ 8686 multiletter control sequences out of 15000+600000
  42398 words of font info for 102 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 42i,12n,32p,1577b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 1141 hyphenation exceptions out of 8191
+ 42i,12n,32p,1606b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1016,7 +1016,7 @@ re/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on momcons.pdf (40 pages, 5359469 bytes).
+Output written on momcons.pdf (40 pages, 5359477 bytes).
 PDF statistics:
  444 PDF objects out of 1000 (max. 8388607)
  280 compressed objects within 3 object streams
