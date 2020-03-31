@@ -141,7 +141,16 @@ Visualization of the flow around the droplets (Figure \ref{magn}) illustrates th
 
 \vspace*{0.2cm}
 
-To summarize, the simulations broadly fall into three categories. The first two categories concern those that use the present momentum conserving method, and as a result maintain physical values of the kinetic energy and smooth interfacial shapes. Certain simulations amongst the ones carried out with the present method dispaly some numerical instablities as a function of the choice of advection scheme (CIAM/WY) and flux limiter (QUICK/WENO/ENO/Superbee/Verstappen) combination. Finally, there are simulations that rapidly blow up, displaying marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes. Therefore, our studies suggest that certain combinations of the advection scheme and the flux limiter are more numerically robust than others, in particular, the most stable combinations are that of CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter appear to be quite diffusive. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale = 0.135]{Figures/Sagar/comparison.png}
+\end{center}
+\vspace*{-0.5cm}
+\caption{A comparison of the temporal evolution between the non conservative version and the present method, using a combination of the WY advection scheme with the QUICK flux limiter. The flow is along the positive X direction, with gravity along the opposite direction. The red contour indicates the isosurface of the volume fraction field corresponding to a value of $0.5$, whereas the black contours surrounding the drop represent isosurfaces of the magnitude of vorticity. The raindrop in the non conservative version displays massive deformations leading to artificial breakup due to rapidly growing numerical instabilities. The droplet resolution for both methods is $D/h = 8$ .}
+\label{compare}
+\end{figure}
+
+To summarize, the simulations broadly fall into three categories. The first two categories concern those that use the present momentum conserving method, and as a result maintain physical values of the kinetic energy and smooth interfacial shapes. Certain simulations amongst the ones carried out with the present method dispaly some numerical instablities as a function of the choice of advection scheme (CIAM/WY) and flux limiter (QUICK/WENO/ENO/Superbee/Verstappen) combination. Finally, there are simulations that rapidly blow up, displaying marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes (see figure \ref{compare}). Therefore, our studies suggest that certain combinations of the advection scheme and the flux limiter are more numerically robust than others, in particular, the most stable combinations are that of CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter appear to be quite diffusive. 
 
 \vspace*{0.2cm}
 
