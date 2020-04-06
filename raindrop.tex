@@ -39,11 +39,9 @@ In order to properly reproduce and analyse the dynamics of a relatively large dr
 % -----
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.35\textwidth]{Figures/setup.pdf}
+\includegraphics[width=0.5\textwidth]{Figures/Sagar/setup.png}
 \end{center}
-\caption{Problem setup for falling rain drop test case. Boundary conditions 
-at the top and bottom are a uniform inflow and outflow velocity $U_0(t)$. 
-Boundary conditions on the side are free slip (no shear stress).}
+\caption{A 2D schematic of the numerical setup for the falling raindrop. We apply a uniform inflow velocity condition with $U_0(t)$ and an outflow velocity condition at the top which corresponds to zero gradient of the velocity at the boundary. Boundary conditions on the side walls correspond to those of free slip (no shear stress).}
 \label{setup}
 \end{figure}
 % -----
@@ -60,7 +58,7 @@ formulation, $D/h=30$.}
 \end{figure}
 % -----
 
-Numerical simulations of this test case at moderate resolution ($D/h=16$ to 64 grid points per diameter were tested) without the consistent momentum-conserving scheme described in this paper, results in the catastrophic deformations of the droplet as shown in Fig. \ref{cata}, which we describe as 'fictitious' or 'artificial' atomization as a result of rapidly growing numerical instabilities. This effect was previously uncovered by \cite{Xiao:2014vs} in a similar case involving the sudden interaction of a droplet at rest with a uniform gas flow. The Weber number in that case was also approximately 3, therefore one would expect a nearly spherical droplet shape, but the authors of ref. \cite{Xiao:2014vs} have reported a similar catastrophic deformation. We propose the following explanation in order to account for such numerical artifacts. To start with, we neglect gravity and viscous effects at this relatively large Reynolds number. Also, we are interested in steady-state flow. On the axis and near the hyperbolic stagnation point at the front of the droplet one has $u_2=0$ for the transverse (radial) velocity and for the axial momentum balance
+Numerical simulations of this test case at moderate resolution (from $D/h=16$ to $D/h=64$) were tested \textit{without} the consistent momentum-conserving scheme described in this paper, results in the catastrophic deformations of the droplet as shown in Fig. \ref{cata}, which we describe as 'fictitious' or 'artificial' atomization as a result of rapidly growing numerical instabilities. This effect was previously uncovered by \cite{Xiao:2014vs} in a similar case involving the sudden interaction of a droplet at rest with a uniform gas flow. The Weber number in that case was also approximately 3, therefore one would expect a nearly spherical droplet shape, but the authors of ref. \cite{Xiao:2014vs} have reported a similar catastrophic deformation. We propose the following explanation in order to account for such numerical artifacts. To start with, we neglect gravity and viscous effects at this relatively large Reynolds number. Also, we are interested in steady-state flow. On the axis and near the hyperbolic stagnation point at the front of the droplet one has $u_2=0$ for the transverse (radial) velocity and for the axial momentum balance
 
 \be
 u_1 \partial_1 u_1 = - \frac 1 \rho \partial_1 p.
@@ -150,7 +148,7 @@ Visualization of the flow around the droplets (Figure \ref{magn}) illustrates th
 \label{compare}
 \end{figure}
 
-To summarize, the simulations broadly fall into three categories. The first two categories concern those that use the present momentum conserving method, and as a result maintain physical values of the kinetic energy and smooth interfacial shapes. Certain simulations amongst the ones carried out with the present method dispaly some numerical instablities as a function of the choice of advection scheme (CIAM/WY) and flux limiter (QUICK/WENO/ENO/Superbee/Verstappen) combination. Finally, there are simulations that rapidly blow up, displaying marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes (see figure \ref{compare}). Therefore, our studies suggest that certain combinations of the advection scheme and the flux limiter are more numerically robust than others, in particular, the most stable combinations are that of CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter appear to be quite diffusive. 
+To summarize, the simulations broadly fall into three categories. The first two categories concern those that use the present momentum conserving method, and as a result maintain physical values of the kinetic energy and smooth interfacial shapes. Certain simulations amongst the ones carried out with the present method display some numerical instablities (but not leading to catastrophic deformation) as a function of the choice of advection scheme (CIAM/WY) and flux limiter (QUICK/WENO/ENO/Superbee/Verstappen) combination. Finally, there are simulations carried out without the present method that rapidly blow up, displaying marked peaks or spikes in kinetic energy as a function of time, associated with massively deformed interface shapes (see figure \ref{compare}). Therefore, our studies suggest that certain combinations of the advection scheme and the flux limiter are more numerically robust than others, in particular, the most stable combinations are that of CIAM advection with Superbee limiter and the WY advection with QUICK limiter. As a minor remark, the CIAM advection with the Superbee limiter appear to be quite diffusive. 
 
 \vspace*{0.2cm}
 
@@ -163,7 +161,7 @@ To summarize, the simulations broadly fall into three categories. The first two 
 \label{multi}
 \end{figure}
 
-We illustrate the performance of the present method through the results of our simulations in Figure \ref{multi}. We have carried out simulations corresponding to $D/h = 8, 16, 32 $ and $64$ using the WY advection scheme in combination with the QUICK flux limiter, while keeping the same value for the inflow velocity boundary condition. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet kinetic energy (Fig. \ref{multi}. A) and droplet mass (Fig. \ref{multi}. B), as well as moment of inertia of the droplet along directions aligned to the inflow velocity (Fig. \ref{multi}. C) and orthogonal (Fig. \ref{multi}. D) to it. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
+We illustrate the performance of the present method through the results of our simulations in Figure \ref{multi}. The spatial resolutions correspond to $D/h = 8, 16, 32 $ and $64$ using the WY advection scheme in combination with the QUICK flux limiter, while keeping the same value for the inflow velocity boundary condition. The quantities of interest while examining the robustness of the method are the temporal evolution of the droplet kinetic energy (Fig. \ref{multi}. A) and droplet mass (Fig. \ref{multi}. B), as well as moment of inertia of the droplet along directions aligned to the inflow velocity (Fig. \ref{multi}. C) and orthogonal (Fig. \ref{multi}. D) to it. The moment of inertia is used as a descriptor of the 'average' droplet shape, with the three moments of inertia along the different axes $I_m$ defined as - 
 
 \be
 I_m = \int_\DDD H x_m^2 {\rm d}\X \;, \quad  1 \le m \le 3,
