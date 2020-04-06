@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.31)  6 APR 2020 14:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.31)  6 APR 2020 20:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -871,7 +871,12 @@ File: Figures/Sagar/dropl_velocity_accel_ppd.png Graphic file (type png)
 Package pdftex.def Info: Figures/Sagar/dropl_velocity_accel_ppd.png  used on in
 put line 174.
 (pdftex.def)             Requested size: 334.97063pt x 247.52414pt.
- [32 <./Figures/Sagar/dropl_velocity_accel_ppd.png>])
+
+Overfull \hbox (24.23041pt too wide) in paragraph at lines 183--191
+ |  [] 
+ []
+
+[32 <./Figures/Sagar/dropl_velocity_accel_ppd.png>])
 
 Package natbib Warning: Citation `Ling16' on page 33 undefined on input line 25
 6.
@@ -894,7 +899,7 @@ File: Figures/Marco/vof-vel-atom.png Graphic file (type png)
 Package pdftex.def Info: Figures/Marco/vof-vel-atom.png  used on input line 281
 .
 (pdftex.def)             Requested size: 341.5519pt x 177.3328pt.
-) [33] [34 <./Figures/Marco/vof-vel-atom.png (PNG copy)>]
+[33]) [34 <./Figures/Marco/vof-vel-atom.png (PNG copy)>]
 
 Package natbib Warning: Citation `popinet09' on page 35 undefined on input line
  170.
@@ -926,17 +931,17 @@ ne 7.
 Package natbib Warning: Citation `Eggers08' on page 35 undefined on input line 
 7.
 
-[35]
-<Figures/2-1.pdf, id=253, 722.7pt x 542.025pt>
+<Figures/2-1.pdf, id=250, 722.7pt x 542.025pt>
 File: Figures/2-1.pdf Graphic file (type pdf)
 <use Figures/2-1.pdf>
 Package pdftex.def Info: Figures/2-1.pdf  used on input line 10.
 (pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
- [36 <./Figures/2-1.pdf>]
+[35]
 
-Package natbib Warning: Citation `Chandrasekhar' on page 37 undefined on input 
+Package natbib Warning: Citation `Chandrasekhar' on page 36 undefined on input 
 line 54.
 
+[36 <./Figures/2-1.pdf>]
 
 Package natbib Warning: Citation `Eggers08' on page 37 undefined on input line 
 61.
@@ -991,13 +996,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5311 strings out of 492982
- 70330 string characters out of 6134896
- 132283 words of memory out of 5000000
- 8686 multiletter control sequences out of 15000+600000
+ 5312 strings out of 492982
+ 70339 string characters out of 6134896
+ 132292 words of memory out of 5000000
+ 8687 multiletter control sequences out of 15000+600000
  42398 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,32p,1606b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,32p,1777b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1008,7 +1013,7 @@ re/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on momcons.pdf (40 pages, 5374201 bytes).
+Output written on momcons.pdf (40 pages, 5375177 bytes).
 PDF statistics:
  440 PDF objects out of 1000 (max. 8388607)
  276 compressed objects within 3 object streams
